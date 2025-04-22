@@ -42,10 +42,15 @@ class ProductGridItem extends StatelessWidget {
                 right: 4,
                 child: InkWell(
                   onTapDown: (details) {
+                    final productCenter = Offset(
+                      details.globalPosition.dx - 60,
+                      details.globalPosition.dy - -90,
+                    );
+
                     CustomPopup.show(
                       context,
-                      details.globalPosition,
-                      width: 157,
+                      productCenter,
+                      width: 164,
                       height: 102,
                       onEdit: () {},
                       onDelete: () {},

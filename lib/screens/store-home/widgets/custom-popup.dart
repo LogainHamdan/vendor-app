@@ -6,7 +6,7 @@ class CustomPopup {
   static void show(
     BuildContext context,
     Offset position, {
-    double width = 157,
+    double width = 164,
     double height = 102,
     VoidCallback? onEdit,
     VoidCallback? onDelete,
@@ -14,15 +14,25 @@ class CustomPopup {
     final RenderBox overlay =
         Overlay.of(context).context.findRenderObject() as RenderBox;
 
-    final double left = position.dx;
-    final double top = position.dy;
-    final double right = overlay.size.width - position.dx;
+    final double left = position.dx - width / 2;
+    final double top = position.dy - height;
+    final double right = overlay.size.width - position.dx - width / 2;
     final double bottom = overlay.size.height - position.dy;
 
     showMenu(
       context: context,
-      position: RelativeRect.fromLTRB(left, top, right, bottom),
-      constraints: BoxConstraints(maxWidth: width, maxHeight: height),
+      position: RelativeRect.fromLTRB(
+        left.clamp(0, overlay.size.width - width),
+        top.clamp(0, overlay.size.height - height),
+        right.clamp(0, overlay.size.width),
+        bottom.clamp(0, overlay.size.height),
+      ),
+      constraints: BoxConstraints(
+        minWidth: width,
+        maxWidth: width,
+        minHeight: height,
+        maxHeight: height,
+      ),
       color: Colors.white,
       elevation: 4,
       shape: RoundedRectangleBorder(
@@ -55,11 +65,8 @@ class CustomPopup {
         ),
       ],
     ).then((value) {
-      if (value == 'edit') {
-        onEdit?.call();
-      } else if (value == 'delete') {
-        onDelete?.call();
-      }
+      if (value == 'edit') onEdit?.call();
+      if (value == 'delete') onDelete?.call();
     });
   }
 }

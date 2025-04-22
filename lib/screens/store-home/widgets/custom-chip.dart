@@ -21,6 +21,7 @@ class CustomChip extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Chip(
+        color: WidgetStatePropertyAll(Colors.white),
         label: Text(
           label,
           style: TextStyle(
