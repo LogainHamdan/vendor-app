@@ -40,15 +40,16 @@ class CustomPopup {
         side: BorderSide(color: containerBorderLight, width: 1),
       ),
       shadowColor: Colors.black.withOpacity(0.08),
+      menuPadding: EdgeInsets.all(8),
       items: [
         PopupMenuItem(
           value: 'edit',
           height: height / 2,
           child: Row(
             children: [
-              SvgPicture.asset(editIcon, height: 16, width: 16),
+              SvgPicture.asset(editIcon, height: 26, width: 26),
               const SizedBox(width: 8),
-              Text('Edit', style: TextStyle(color: greenColor, fontSize: 12)),
+              Text('Edit', style: TextStyle(color: greenColor, fontSize: 14)),
             ],
           ),
         ),
@@ -59,7 +60,10 @@ class CustomPopup {
             children: [
               SvgPicture.asset(deleteIcon, height: 16, width: 16),
               const SizedBox(width: 8),
-              Text('Delete', style: TextStyle(color: deleteColor)),
+              Text(
+                'Delete',
+                style: TextStyle(color: deleteColor, fontSize: 14),
+              ),
             ],
           ),
         ),
