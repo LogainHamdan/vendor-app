@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../constants/constants.dart';
+import '../../../constants/constants.dart';
 import 'info-column.dart';
 
 class InfoCard extends StatelessWidget {
@@ -33,6 +33,10 @@ class InfoCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(color: containerBorderLight, width: 1),
                   ),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child: Image.asset(uMark, height: 40, width: 40),
+                  ),
                 ),
                 const SizedBox(width: 8),
                 Column(
@@ -56,7 +60,6 @@ class InfoCard extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 8),
-
                     Row(
                       children: [
                         SvgPicture.asset(starIcon, height: 16, width: 16),
@@ -81,7 +84,7 @@ class InfoCard extends StatelessWidget {
                     shape: BoxShape.circle,
                   ),
                   child: Center(
-                    child: SvgPicture.asset(soundIcon, height: 26, width: 20),
+                    child: Image.asset(soundIcon, height: 26, width: 20),
                   ),
                 ),
               ],

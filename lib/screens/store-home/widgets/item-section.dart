@@ -1,9 +1,10 @@
-import 'package:burger_home/screens/constants/constants.dart';
 import 'package:burger_home/screens/store-home/widgets/custom-chip.dart';
 import 'package:burger_home/screens/store-home/widgets/custom-text-field.dart';
 import 'package:burger_home/screens/store-home/widgets/product-item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../constants/constants.dart';
 
 class ItemsSection extends StatelessWidget {
   const ItemsSection({super.key});

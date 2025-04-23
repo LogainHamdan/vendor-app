@@ -2,7 +2,7 @@ import 'package:burger_home/screens/store-home/widgets/custom-popup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../constants/constants.dart';
+import '../../../constants/constants.dart';
 
 class ProductGridItem extends StatelessWidget {
   final String imagePath;

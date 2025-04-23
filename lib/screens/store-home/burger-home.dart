@@ -6,9 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
-import '../constants/constants.dart';
+import '../../constants/constants.dart';
 
 class StoreHomePage extends StatelessWidget {
+  static const id = '/home';
   const StoreHomePage({super.key});
 
   @override

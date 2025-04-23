@@ -23,7 +23,7 @@ class InfoColumn extends StatelessWidget {
         Row(
           children: [
             icon,
-            SizedBox(width: 8),
+            SizedBox(width: 4),
             Text(
               label,
               style: TextStyle(
