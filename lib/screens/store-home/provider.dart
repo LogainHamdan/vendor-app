@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class BurgerTabProvider with ChangeNotifier {
+class BurgerHomeProvider with ChangeNotifier {
   bool _showItems = true;
 
   bool get showItems => _showItems;

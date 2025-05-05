@@ -1,8 +1,11 @@
+import 'package:burger_home/screens/ad-details/widgets/custom-app-bar.dart';
 import 'package:burger_home/screens/store-home/provider.dart';
 import 'package:burger_home/screens/store-home/widgets/info-card.dart';
 import 'package:burger_home/screens/store-home/widgets/item-section.dart';
 import 'package:burger_home/screens/store-home/widgets/review-section.dart';
+import 'package:burger_home/screens/store-home/widgets/tab-button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
@@ -14,7 +17,7 @@ class StoreHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tabProvider = Provider.of<BurgerTabProvider>(context);
+    final tabProvider = Provider.of<BurgerHomeProvider>(context);
 
     return MaterialApp(
       home: Scaffold(
@@ -34,18 +37,7 @@ class StoreHomePage extends StatelessWidget {
         //     BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: 'More'),
         //   ],
         // ),
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(50),
-          child: AppBar(
-            elevation: 0,
-
-            scrolledUnderElevation: 0,
-            backgroundColor: Colors.white,
-
-            centerTitle: true,
-            title: Text('Burger Home'),
-          ),
-        ),
+        appBar: CustomAppBar(title: 'Burger Home'),
         body: SafeArea(
           child: Container(
             color: Colors.white,
@@ -58,7 +50,7 @@ class StoreHomePage extends StatelessWidget {
                   children: [
                     Image.asset(
                       burgerCover,
-                      height: 178,
+                      height: 178.h,
                       width: double.infinity,
                       fit: BoxFit.cover,
                     ),
@@ -84,83 +76,28 @@ class StoreHomePage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Expanded(
-                        child: ElevatedButton(
-                          onPressed: () {
-                            tabProvider.showAllItems();
-                          },
-                          style: ElevatedButton.styleFrom(
-                            elevation: 0,
-
-                            backgroundColor:
-                                tabProvider.showItems
-                                    ? blueColor
-                                    : Colors.white,
-                            foregroundColor:
-                                tabProvider.showItems
-                                    ? Colors.white
-                                    : titleColor,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16),
-                              side: BorderSide(
-                                color:
-                                    tabProvider.showItems
-                                        ? Colors.transparent
-                                        : containerBorderLight,
-                                width: 1,
-                              ),
-                            ),
-                            minimumSize: Size(168, 40),
-                          ),
-                          child: Text(
-                            "All Items",
-                            style: TextStyle(
-                              fontWeight:
-                                  tabProvider.showItems
-                                      ? FontWeight.bold
-                                      : FontWeight.normal,
-                            ),
-                          ),
-                        ),
+                      TabButton(
+                        label: "All Items",
+                        isSelected: tabProvider.showItems,
+                        onPressed: () => tabProvider.showAllItems(),
+                        selectedColor: blueColor,
+                        unselectedColor: Colors.white,
+                        selectedTextColor: Colors.white,
+                        unselectedTextColor: titleColor,
+                        selectedBorderColor: Colors.transparent,
+                        unselectedBorderColor: containerBorderLight,
                       ),
                       const SizedBox(width: 10),
-                      Expanded(
-                        child: ElevatedButton(
-                          onPressed: () {
-                            tabProvider.showReviews();
-                          },
-                          style: ElevatedButton.styleFrom(
-                            elevation: 0,
-                            backgroundColor:
-                                !tabProvider.showItems
-                                    ? blueColor
-                                    : Colors.white,
-                            foregroundColor:
-                                !tabProvider.showItems
-                                    ? Colors.white
-                                    : titleColor,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16),
-                              side: BorderSide(
-                                color:
-                                    !tabProvider.showItems
-                                        ? Colors.transparent
-                                        : containerBorderLight,
-                                width: 1,
-                              ),
-                            ),
-                            minimumSize: Size(168, 40),
-                          ),
-                          child: Text(
-                            "Reviews",
-                            style: TextStyle(
-                              fontWeight:
-                                  !tabProvider.showItems
-                                      ? FontWeight.bold
-                                      : FontWeight.normal,
-                            ),
-                          ),
-                        ),
+                      TabButton(
+                        label: "Reviews",
+                        isSelected: !tabProvider.showItems,
+                        onPressed: () => tabProvider.showReviews(),
+                        selectedColor: blueColor,
+                        unselectedColor: Colors.white,
+                        selectedTextColor: Colors.white,
+                        unselectedTextColor: titleColor,
+                        selectedBorderColor: Colors.transparent,
+                        unselectedBorderColor: containerBorderLight,
                       ),
                     ],
                   ),

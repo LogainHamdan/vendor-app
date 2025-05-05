@@ -1,5 +1,5 @@
 import 'package:burger_home/screens/store-home/widgets/custom-chip.dart';
-import 'package:burger_home/screens/store-home/widgets/custom-text-field.dart';
+import 'package:burger_home/screens/store-home/widgets/custom-search-field.dart';
 import 'package:burger_home/screens/store-home/widgets/product-item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
