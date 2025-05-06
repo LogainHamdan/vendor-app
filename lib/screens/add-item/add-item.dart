@@ -10,64 +10,71 @@ import '../../constants/constants.dart';
 import '../store-home/widgets/tab-button.dart';
 
 class EditItemScreen extends StatelessWidget {
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController descController = TextEditingController();
-  final TextEditingController priceController = TextEditingController();
-  final TextEditingController discountValueController = TextEditingController();
-  final TextEditingController maxQtyController = TextEditingController();
-  final TextEditingController stockController = TextEditingController();
-
-  String discountType = 'Amount';
+  static const id = '/edit-item';
 
   EditItemScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<AddItemProvider>(context, listen: false);
     return Scaffold(
       appBar: CustomAppBar(title: 'Edit Item'),
-
-      body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 16.w),
-        child: Padding(
-          padding: EdgeInsets.only(top: 16.0.h),
-          child: Container(
-            color: Colors.white,
+      body: Padding(
+        padding: EdgeInsets.only(top: 16.0.h),
+        child: Container(
+          color: Colors.white,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.0.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    TabButton(
-                      label: "العربية",
-                      isSelected: provider.showArabic,
-                      onPressed: () => provider.showArabicTab(),
-                      selectedColor: blueColor,
-                      unselectedColor: Colors.white,
-                      selectedTextColor: Colors.white,
-                      unselectedTextColor: titleColor,
-                      selectedBorderColor: Colors.transparent,
-                      unselectedBorderColor: containerBorderLight,
-                    ),
-                    SizedBox(width: 10.w),
-                    TabButton(
-                      label: "English",
-                      isSelected: !provider.showArabic,
-                      onPressed: () => provider.showEnglishTab(),
-                      selectedColor: blueColor,
-                      unselectedColor: Colors.white,
-                      selectedTextColor: Colors.white,
-                      unselectedTextColor: titleColor,
-                      selectedBorderColor: Colors.transparent,
-                      unselectedBorderColor: containerBorderLight,
-                    ),
-                  ],
+                Padding(
+                  padding: EdgeInsets.only(top: 8.0.h),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Consumer<AddItemProvider>(
+                        builder: (context, provider, child) {
+                          return TabButton(
+                            label: "العربية",
+                            isSelected: provider.showArabic,
+                            onPressed: () => provider.showArabicTab(),
+                            selectedColor: blueColor,
+                            unselectedColor: Colors.white,
+                            selectedTextColor: Colors.white,
+                            unselectedTextColor: titleColor,
+                            selectedBorderColor: Colors.transparent,
+                            unselectedBorderColor: containerBorderLight,
+                          );
+                        },
+                      ),
+                      SizedBox(width: 10.w),
+                      Consumer<AddItemProvider>(
+                        builder: (context, provider, child) {
+                          return TabButton(
+                            label: "English",
+                            isSelected: !provider.showArabic,
+                            onPressed: () => provider.showEnglishTab(),
+                            selectedColor: blueColor,
+                            unselectedColor: Colors.white,
+                            selectedTextColor: Colors.white,
+                            unselectedTextColor: titleColor,
+                            selectedBorderColor: Colors.transparent,
+                            unselectedBorderColor: containerBorderLight,
+                          );
+                        },
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(height: 16.h),
                 Expanded(
-                  child:
-                      provider.showArabic ? ArabicSection() : EnglishSection(),
+                  child: Consumer<AddItemProvider>(
+                    builder: (context, provider, child) {
+                      return provider.showArabic
+                          ? ArabicSection()
+                          : EnglishSection();
+                    },
+                  ),
                 ),
               ],
             ),

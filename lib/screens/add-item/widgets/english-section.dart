@@ -17,13 +17,13 @@ class EnglishSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final provider = Provider.of<AddItemProvider>(context, listen: false);
     return SingleChildScrollView(
-      padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             color: Colors.white,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomTitle(title: 'Item Info'),
                 SizedBox(height: 16.h),
@@ -67,7 +67,7 @@ class EnglishSection extends StatelessWidget {
                     providerKey: 'category',
                   ),
 
-                  SizedBox(height: 8.h),
+                  SizedBox(height: 16.h),
                   CustomTextField(
                     hint: '13.50',
                     borderColor: cardBorder,

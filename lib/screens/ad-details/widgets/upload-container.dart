@@ -25,6 +25,7 @@ class UploadContainer extends StatelessWidget {
                   fontSize: 14,
                 ),
               ),
+              TextSpan(text: ' '),
               TextSpan(
                 text: ratio,
                 style: TextStyle(

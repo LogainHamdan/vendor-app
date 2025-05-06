@@ -21,57 +21,68 @@ class CustomTextField extends StatelessWidget {
     this.suffixIcon,
     this.keyboardType,
     this.onChanged,
-    this.height = 52,
+    this.height = 42,
     this.width = 344,
     this.maxLines = 1,
     required this.borderColor,
   });
-
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width?.w,
-      height: height?.h,
-      decoration: BoxDecoration(
-        border: Border.all(color: borderColor),
-        borderRadius: BorderRadius.circular(14),
-      ),
-      child: TextField(
-        maxLines: maxLines,
-        keyboardType: keyboardType,
-        onChanged: onChanged,
-        style: TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.w500,
-          color: blackColor,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (label != null)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 12),
+            child: Text(
+              label!,
+              style: TextStyle(
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w500,
+                color: blackColor,
+              ),
+            ),
+          ),
+        Container(
+          width: width?.w,
+          height: height?.h,
+          decoration: BoxDecoration(
+            border: Border.all(color: borderColor),
+            borderRadius: BorderRadius.circular(14),
+          ),
+          child: TextField(
+            maxLines: maxLines,
+            keyboardType: keyboardType,
+            onChanged: onChanged,
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+              color: blackColor,
+            ),
+            decoration: InputDecoration(
+              hintText: hint,
+              hintStyle: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                color: titleColor,
+              ),
+              border: InputBorder.none,
+              contentPadding: const EdgeInsets.symmetric(
+                horizontal: 12,
+                vertical: 14,
+              ),
+              isDense: true,
+              suffix:
+                  suffixIcon != null
+                      ? Padding(
+                        padding: const EdgeInsets.only(right: 8),
+                        child: suffixIcon,
+                      )
+                      : null,
+            ),
+          ),
         ),
-        decoration: InputDecoration(
-          labelText: label,
-          labelStyle: TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
-            color: blackColor,
-          ),
-          hintText: hint,
-          hintStyle: TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
-            color: titleColor,
-          ),
-          border: InputBorder.none,
-          contentPadding: const EdgeInsets.symmetric(
-            horizontal: 12,
-            vertical: 14,
-          ),
-          suffixIcon:
-              suffixIcon != null
-                  ? Padding(
-                    padding: const EdgeInsets.only(right: 8),
-                    child: suffixIcon,
-                  )
-                  : null,
-        ),
-      ),
+      ],
     );
   }
 }

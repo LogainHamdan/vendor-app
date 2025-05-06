@@ -13,38 +13,37 @@ class ScheduleRowWidget extends StatelessWidget {
     required this.timeRange,
     required this.onAdd,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
         children: [
-          Text(
-            day,
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-              color: blackColor,
+          SizedBox(
+            width: 108, // fixed width for the day column
+            child: Text(
+              day,
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: blackColor,
+              ),
             ),
           ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Container(
-              height: 30,
-              width: 108,
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-              decoration: BoxDecoration(
-                border: Border.all(color: containerBorderLight),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Text(
-                timeRange,
-                style: TextStyle(
-                  fontSize: 10,
-                  color: titleColor,
-                  fontWeight: FontWeight.w400,
-                ),
+          Container(
+            width: 108, // fixed width for the time range container
+            height: 30,
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            decoration: BoxDecoration(
+              border: Border.all(color: containerBorderLight),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Text(
+              timeRange,
+              style: TextStyle(
+                fontSize: 10,
+                color: titleColor,
+                fontWeight: FontWeight.w400,
               ),
             ),
           ),

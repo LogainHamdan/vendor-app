@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TabButton extends StatelessWidget {
   final String label;
@@ -44,8 +45,10 @@ class TabButton extends StatelessWidget {
         ),
         child: Text(
           label,
-          style: TextStyle(
-            fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+          style: GoogleFonts.poppins(
+            textStyle: TextStyle(
+              fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+            ),
           ),
         ),
       ),

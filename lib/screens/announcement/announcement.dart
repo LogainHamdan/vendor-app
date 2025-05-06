@@ -1,6 +1,7 @@
 import 'package:burger_home/screens/ad-details/widgets/custm-switch-tile.dart';
 import 'package:burger_home/screens/ad-details/widgets/custom-app-bar.dart';
 import 'package:burger_home/screens/ad-details/widgets/custom-text-field.dart';
+import 'package:burger_home/screens/ad-details/widgets/custom-title.dart';
 import 'package:burger_home/screens/announcement/widgets/custom-elevated-button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,6 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../constants/constants.dart';
 
 class AnnouncementScreen extends StatefulWidget {
+  static const id = 'announ';
   @override
   _AnnouncementScreenState createState() => _AnnouncementScreenState();
 }
@@ -29,11 +31,23 @@ class _AnnouncementScreenState extends State<AnnouncementScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomSwitchTile(
-                  title: 'Announcement content',
-                  value: true,
-                  onChanged: (value) {},
+                SizedBox(height: 16.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CustomTitle(title: 'Announcement content'),
+                    SizedBox(
+                      height: 42.h,
+                      child: Switch(
+                        value: true,
+                        activeColor: greenColor,
+                        onChanged: (value) {},
+                        inactiveTrackColor: Colors.grey.shade300,
+                      ),
+                    ),
+                  ],
                 ),
+
                 SizedBox(height: 12.h),
                 CustomTextField(
                   hint: 'Type announcement',

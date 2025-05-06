@@ -57,7 +57,10 @@ class AdDetailsScreen extends StatelessWidget {
                             UploadContainer(title: "Cover", ratio: '1:3'),
                           ],
                         ),
+                        SizedBox(height: 16.h),
+
                         CustomTitle(title: "Main Info"),
+                        SizedBox(height: 16.h),
 
                         CustomTextField(
                           borderColor: cardBorder,
@@ -65,59 +68,81 @@ class AdDetailsScreen extends StatelessWidget {
                           label: 'Restaurant Name (English)',
                           hint: 'Restaurant Name (English)',
                         ),
+                        SizedBox(height: 16.h),
+
                         CustomTextField(
                           borderColor: cardBorder,
 
                           label: 'Restaurant Name (Arabic)',
                           hint: 'Restaurant Name (Arabic)',
                         ),
+                        SizedBox(height: 16.h),
+
                         CustomTextField(
                           borderColor: cardBorder,
                           label: 'Subline (English)',
                           hint: 'Subline (English)',
                         ),
+                        SizedBox(height: 16.h),
+
                         CustomTextField(
                           label: 'Subline (Arabic)',
                           borderColor: cardBorder,
                           hint: 'Subline (Arabic)',
                         ),
+                        SizedBox(height: 16.h),
+
                         CustomTextField(
                           borderColor: cardBorder,
                           label: 'Mobile Number',
                           hint: 'Mobile Number',
                         ),
+                        SizedBox(height: 16.h),
 
-                        const SizedBox(height: 16),
                         CustomTitle(title: 'Location Information'),
+                        SizedBox(height: 16.h),
+
                         CustomMap(assetPath: mapIcon),
+                        SizedBox(height: 16.h),
+
                         CustomTextField(
                           borderColor: cardBorder,
                           label: 'Restaurant Address (English)',
                           hint: 'Restaurant Address (English)',
                         ),
+                        SizedBox(height: 16.h),
+
                         CustomTextField(
                           label: 'Restaurant Address (Arabic)',
                           borderColor: cardBorder,
                           hint: 'Restaurant Address (Arabic)',
                         ),
+                        SizedBox(height: 16.h),
 
-                        const SizedBox(height: 16),
                         CustomTitle(title: 'Preferences'),
+                        SizedBox(height: 16.h),
+
                         CustomSwitchTile(
                           title: 'Delivery',
                           value: provider.delivery,
                           onChanged: provider.toggleDelivery,
                         ),
+                        SizedBox(height: 16.h),
+
                         CustomSwitchTile(
                           title: 'Cutlery',
                           value: provider.cutlery,
                           onChanged: provider.toggleCutlery,
                         ),
+                        SizedBox(height: 16.h),
+
                         CustomSwitchTile(
                           title: 'Take Away',
                           value: provider.takeAway,
                           onChanged: provider.toggleTakeAway,
                         ),
+                        SizedBox(height: 16.h),
+
                         CustomTextField(
                           borderColor: cardBorder,
                           label: 'Minimum Order',
@@ -126,7 +151,7 @@ class AdDetailsScreen extends StatelessWidget {
                           onChanged: provider.updateMinOrder,
                         ),
 
-                        const SizedBox(height: 8),
+                        SizedBox(height: 16.h),
                         CustomTextField(
                           borderColor: cardBorder,
 
@@ -141,7 +166,7 @@ class AdDetailsScreen extends StatelessWidget {
                           ),
                         ),
 
-                        const SizedBox(height: 16),
+                        SizedBox(height: 16.h),
                         CustomTitle(title: 'Daily Schedule Time'),
                         ...[
                               'Saturday',
