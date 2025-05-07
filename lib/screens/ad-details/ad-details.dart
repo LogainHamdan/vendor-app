@@ -63,23 +63,18 @@ class AdDetailsScreen extends StatelessWidget {
                         SizedBox(height: 16.h),
 
                         CustomTextField(
-                          borderColor: cardBorder,
-
                           label: 'Restaurant Name (English)',
                           hint: 'Restaurant Name (English)',
                         ),
                         SizedBox(height: 16.h),
 
                         CustomTextField(
-                          borderColor: cardBorder,
-
                           label: 'Restaurant Name (Arabic)',
                           hint: 'Restaurant Name (Arabic)',
                         ),
                         SizedBox(height: 16.h),
 
                         CustomTextField(
-                          borderColor: cardBorder,
                           label: 'Subline (English)',
                           hint: 'Subline (English)',
                         ),
@@ -87,13 +82,11 @@ class AdDetailsScreen extends StatelessWidget {
 
                         CustomTextField(
                           label: 'Subline (Arabic)',
-                          borderColor: cardBorder,
                           hint: 'Subline (Arabic)',
                         ),
                         SizedBox(height: 16.h),
 
                         CustomTextField(
-                          borderColor: cardBorder,
                           label: 'Mobile Number',
                           hint: 'Mobile Number',
                         ),
@@ -106,7 +99,6 @@ class AdDetailsScreen extends StatelessWidget {
                         SizedBox(height: 16.h),
 
                         CustomTextField(
-                          borderColor: cardBorder,
                           label: 'Restaurant Address (English)',
                           hint: 'Restaurant Address (English)',
                         ),
@@ -114,7 +106,6 @@ class AdDetailsScreen extends StatelessWidget {
 
                         CustomTextField(
                           label: 'Restaurant Address (Arabic)',
-                          borderColor: cardBorder,
                           hint: 'Restaurant Address (Arabic)',
                         ),
                         SizedBox(height: 16.h),
@@ -144,7 +135,6 @@ class AdDetailsScreen extends StatelessWidget {
                         SizedBox(height: 16.h),
 
                         CustomTextField(
-                          borderColor: cardBorder,
                           label: 'Minimum Order',
                           hint: '50',
                           keyboardType: TextInputType.number,
@@ -153,8 +143,6 @@ class AdDetailsScreen extends StatelessWidget {
 
                         SizedBox(height: 16.h),
                         CustomTextField(
-                          borderColor: cardBorder,
-
                           label: 'Estimated Delivery Time',
                           hint: '7-10 minutes',
                           keyboardType: TextInputType.number,

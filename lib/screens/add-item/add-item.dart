@@ -20,65 +20,66 @@ class EditItemScreen extends StatelessWidget {
       appBar: CustomAppBar(title: 'Edit Item'),
       body: Padding(
         padding: EdgeInsets.only(top: 16.0.h),
-        child: Container(
-          color: Colors.white,
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(top: 8.0.h),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Consumer<AddItemProvider>(
-                        builder: (context, provider, child) {
-                          return TabButton(
-                            label: "العربية",
-                            isSelected: provider.showArabic,
-                            onPressed: () => provider.showArabicTab(),
-                            selectedColor: blueColor,
-                            unselectedColor: Colors.white,
-                            selectedTextColor: Colors.white,
-                            unselectedTextColor: titleColor,
-                            selectedBorderColor: Colors.transparent,
-                            unselectedBorderColor: containerBorderLight,
-                          );
-                        },
-                      ),
-                      SizedBox(width: 10.w),
-                      Consumer<AddItemProvider>(
-                        builder: (context, provider, child) {
-                          return TabButton(
-                            label: "English",
-                            isSelected: !provider.showArabic,
-                            onPressed: () => provider.showEnglishTab(),
-                            selectedColor: blueColor,
-                            unselectedColor: Colors.white,
-                            selectedTextColor: Colors.white,
-                            unselectedTextColor: titleColor,
-                            selectedBorderColor: Colors.transparent,
-                            unselectedBorderColor: containerBorderLight,
-                          );
-                        },
-                      ),
-                    ],
-                  ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              color: Colors.white,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+                child: Column(
+                  children: [
+                    SizedBox(height: 16.h),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Consumer<AddItemProvider>(
+                          builder: (context, provider, child) {
+                            return TabButton(
+                              label: "العربية",
+                              isSelected: provider.showArabic,
+                              onPressed: () => provider.showArabicTab(),
+                              selectedColor: blueColor,
+                              unselectedColor: Colors.white,
+                              selectedTextColor: Colors.white,
+                              unselectedTextColor: titleColor,
+                              selectedBorderColor: Colors.transparent,
+                              unselectedBorderColor: containerBorderLight,
+                            );
+                          },
+                        ),
+                        SizedBox(width: 10.w),
+                        Consumer<AddItemProvider>(
+                          builder: (context, provider, child) {
+                            return TabButton(
+                              label: "English",
+                              isSelected: !provider.showArabic,
+                              onPressed: () => provider.showEnglishTab(),
+                              selectedColor: blueColor,
+                              unselectedColor: Colors.white,
+                              selectedTextColor: Colors.white,
+                              unselectedTextColor: titleColor,
+                              selectedBorderColor: Colors.transparent,
+                              unselectedBorderColor: containerBorderLight,
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
-                SizedBox(height: 16.h),
-                Expanded(
-                  child: Consumer<AddItemProvider>(
-                    builder: (context, provider, child) {
-                      return provider.showArabic
-                          ? ArabicSection()
-                          : EnglishSection();
-                    },
-                  ),
-                ),
-              ],
+              ),
             ),
-          ),
+            Expanded(
+              child: Consumer<AddItemProvider>(
+                builder: (context, provider, child) {
+                  return provider.showArabic
+                      ? ArabicSection()
+                      : EnglishSection();
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );

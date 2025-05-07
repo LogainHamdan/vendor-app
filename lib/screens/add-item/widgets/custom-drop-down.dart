@@ -26,23 +26,27 @@ class CustomDropdownFormField extends StatelessWidget {
     final provider = Provider.of<AddItemProvider>(context);
     final selectedValue = provider.getValue(providerKey);
 
-    return SizedBox(
-      width: width,
-      height: 75.h,
-      child: GestureDetector(
-        onTap: () {
-          provider.toggleExpanded();
-        },
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              label,
-              style: GoogleFonts.poppins(fontSize: 14.sp, color: blackColor),
-            ),
-            SizedBox(height: 12.h),
-            DropdownButtonFormField<String>(
+    return GestureDetector(
+      onTap: () {
+        provider.toggleExpanded();
+      },
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            label,
+            style: GoogleFonts.poppins(fontSize: 14.sp, color: blackColor),
+          ),
+          SizedBox(height: 12.h),
+          SizedBox(
+            height: 42.h,
+            width: width,
+            child: DropdownButtonFormField<String>(
               value: selectedValue,
+              hint: Text(
+                label,
+                style: GoogleFonts.poppins(fontSize: 14.sp, color: titleColor),
+              ),
               items:
                   items.map((e) {
                     return DropdownMenuItem(
@@ -63,7 +67,6 @@ class CustomDropdownFormField extends StatelessWidget {
                 }
               },
               decoration: InputDecoration(
-                labelText: label,
                 labelStyle: GoogleFonts.poppins(
                   fontSize: 14.sp,
                   color: titleColor,
@@ -77,16 +80,16 @@ class CustomDropdownFormField extends StatelessWidget {
                 fillColor: Colors.white,
                 filled: true,
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: cardBorder, width: 0.5),
-                  borderRadius: BorderRadius.circular(14),
+                  borderSide: BorderSide(color: cardBorder, width: 1),
+                  borderRadius: BorderRadius.circular(14.r),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: cardBorder, width: 0.5),
-                  borderRadius: BorderRadius.circular(14),
+                  borderSide: BorderSide(color: cardBorder, width: 1),
+                  borderRadius: BorderRadius.circular(14.r),
                 ),
                 border: OutlineInputBorder(
-                  borderSide: BorderSide(color: cardBorder, width: 0.5),
-                  borderRadius: BorderRadius.circular(14),
+                  borderSide: BorderSide(color: cardBorder, width: 1),
+                  borderRadius: BorderRadius.circular(14.r),
                 ),
               ),
               style: GoogleFonts.poppins(
@@ -96,8 +99,8 @@ class CustomDropdownFormField extends StatelessWidget {
               ),
               iconEnabledColor: Colors.transparent,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

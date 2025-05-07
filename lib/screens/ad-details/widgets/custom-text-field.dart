@@ -12,7 +12,6 @@ class CustomTextField extends StatelessWidget {
   final double? height;
   final double? width;
   final int? maxLines;
-  final Color borderColor;
 
   const CustomTextField({
     super.key,
@@ -24,7 +23,6 @@ class CustomTextField extends StatelessWidget {
     this.height = 42,
     this.width = 344,
     this.maxLines = 1,
-    required this.borderColor,
   });
   @override
   Widget build(BuildContext context) {
@@ -47,8 +45,8 @@ class CustomTextField extends StatelessWidget {
           width: width?.w,
           height: height?.h,
           decoration: BoxDecoration(
-            border: Border.all(color: borderColor),
-            borderRadius: BorderRadius.circular(14),
+            border: Border.all(color: cardBorder),
+            borderRadius: BorderRadius.circular(14.r),
           ),
           child: TextField(
             maxLines: maxLines,

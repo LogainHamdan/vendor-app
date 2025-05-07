@@ -54,7 +54,6 @@ class _AnnouncementScreenState extends State<AnnouncementScreen> {
                   height: 124.h,
                   width: 344.w,
                   maxLines: 5,
-                  borderColor: containerBorderLight,
                 ),
 
                 SizedBox(height: 16.h),
