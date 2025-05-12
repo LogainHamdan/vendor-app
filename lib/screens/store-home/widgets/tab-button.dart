@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TabButton extends StatelessWidget {
@@ -41,11 +42,11 @@ class TabButton extends StatelessWidget {
               width: 1,
             ),
           ),
-          minimumSize: const Size(168, 40),
+          minimumSize: Size(168.w, 40.h),
         ),
         child: Text(
           label,
-          style: GoogleFonts.poppins(
+          style: GoogleFonts.notoSans(
             textStyle: TextStyle(
               fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
             ),

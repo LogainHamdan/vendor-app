@@ -1,6 +1,7 @@
 import 'package:burger_home/screens/ad-details/widgets/custom-app-bar.dart';
 import 'package:burger_home/screens/add-item/provider.dart';
 import 'package:burger_home/screens/add-item/widgets/arabic-section.dart';
+import 'package:burger_home/screens/add-item/widgets/draggable-button.dart';
 import 'package:burger_home/screens/add-item/widgets/english-section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -82,6 +83,7 @@ class EditItemScreen extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: DraggableButton('Save', onPressed: () {}),
     );
   }
 }

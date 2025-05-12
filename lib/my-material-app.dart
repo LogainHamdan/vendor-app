@@ -19,24 +19,24 @@ class MyMaterialApp extends StatelessWidget {
         return MaterialApp(
           navigatorKey: GlobalKey<NavigatorState>(),
           debugShowCheckedModeBanner: false,
-          title: 'Wefeh',
+          title: 'Vendor',
           theme: ThemeData(
             textTheme: TextTheme(
-              bodySmall: GoogleFonts.poppins(
+              bodySmall: GoogleFonts.notoSans(
                 fontSize: 12.sp,
                 color: Colors.black,
               ),
-              bodyMedium: GoogleFonts.poppins(
+              bodyMedium: GoogleFonts.notoSans(
                 fontSize: 16.sp,
                 color: Colors.black,
               ),
-              bodyLarge: GoogleFonts.poppins(
+              bodyLarge: GoogleFonts.notoSans(
                 fontSize: 20.sp,
                 color: Colors.black,
               ),
             ),
           ),
-          initialRoute: AdDetailsScreen.id,
+          initialRoute: EditItemScreen.id,
           routes: {
             AdDetailsScreen.id: (context) => AdDetailsScreen(),
             StoreHomePage.id: (context) => StoreHomePage(),

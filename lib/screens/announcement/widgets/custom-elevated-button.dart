@@ -36,7 +36,7 @@ class CustomElevatedButton extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: GoogleFonts.poppins(
+          style: GoogleFonts.notoSans(
             textStyle: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
           ),
         ),

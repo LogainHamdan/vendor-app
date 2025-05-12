@@ -42,3 +42,6 @@ String mapIcon = 'assets/img_3.png';
 String uploadIcon = 'assets/Upload.svg';
 String uploadContainer = 'assets/Picture (1).svg';
 String closeIcon = 'assets/close.svg';
+String closeGreyIcon = 'assets/user-remove.svg';
+String thumbnailImg = 'assets/Frame 2147225934.svg';
+String pancakeImg = 'assets/img_4.png';

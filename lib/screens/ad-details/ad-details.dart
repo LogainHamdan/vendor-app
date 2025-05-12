@@ -52,9 +52,17 @@ class AdDetailsScreen extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            UploadContainer(title: "Logo", ratio: '1:1'),
+                            UploadContainer(
+                              title: "Logo",
+                              ratio: '1:1',
+                              image: SvgPicture.asset(uploadContainer),
+                            ),
                             SizedBox(width: 16),
-                            UploadContainer(title: "Cover", ratio: '1:3'),
+                            UploadContainer(
+                              title: "Cover",
+                              ratio: '1:3',
+                              image: SvgPicture.asset(uploadContainer),
+                            ),
                           ],
                         ),
                         SizedBox(height: 16.h),
