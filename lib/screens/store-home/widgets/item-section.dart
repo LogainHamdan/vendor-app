@@ -2,9 +2,12 @@ import 'package:burger_home/screens/store-home/widgets/custom-chip.dart';
 import 'package:burger_home/screens/store-home/widgets/custom-search-field.dart';
 import 'package:burger_home/screens/store-home/widgets/product-item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../constants/constants.dart';
+import '../../more & store management/personal-care/data.dart';
+import 'items-grid-view.dart';
 
 class ItemsSection extends StatelessWidget {
   const ItemsSection({super.key});
@@ -17,19 +20,6 @@ class ItemsSection extends StatelessWidget {
       "Drinks & Shakes",
       "Burgers",
       "Fries & Sides",
-    ];
-
-    final List<Map<String, String>> items = [
-      {
-        'imagePath': shampoo1,
-        'title': 'Dove Nourishin Secrets Hydrating',
-        'price': '₪1.50',
-      },
-      {
-        'imagePath': shampoo2,
-        'title': 'Vatika Nourishin Secrets Hydrating',
-        'price': '₪2.00',
-      },
     ];
 
     return Scaffold(
@@ -79,31 +69,9 @@ class ItemsSection extends StatelessWidget {
                   ),
                 ),
 
-                const SizedBox(height: 8),
+                SizedBox(height: 8.h),
 
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: GridView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: items.length,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          mainAxisSpacing: 16,
-                          crossAxisSpacing: 16,
-                          childAspectRatio: 0.95,
-                        ),
-                    itemBuilder: (context, index) {
-                      final item = items[index];
-                      return ProductGridItem(
-                        imagePath: item['imagePath']!,
-                        title: item['title']!,
-                        price: item['price']!,
-                      );
-                    },
-                  ),
-                ),
+                ItemsGridView(items: items),
               ],
             ),
           ),

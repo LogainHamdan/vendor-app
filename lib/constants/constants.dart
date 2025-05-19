@@ -83,3 +83,4 @@ String householdImg = 'assets/more/categories/image 119.png';
 String babyCareImg = 'assets/more/categories/image 122.png';
 String oilSugarImg = 'assets/more/categories/image 123.png';
 String frozenFoodImg = 'assets/more/categories/img_3.png';
+String uploadCategory = 'assets/more/Frame 2147225937.svg';

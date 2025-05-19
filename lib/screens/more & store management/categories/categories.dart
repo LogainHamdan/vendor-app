@@ -1,3 +1,6 @@
+import 'package:burger_home/screens/ad-details/widgets/custom-app-bar.dart';
+import 'package:burger_home/screens/add-item/widgets/draggable-button.dart';
+import 'package:burger_home/screens/more%20&%20store%20management/categories/widgets/alerts/alerts.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/categories/widgets/category-container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,11 +13,11 @@ class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Categories'),
-        backgroundColor: Colors.teal,
-        centerTitle: true,
+      bottomNavigationBar: DraggableButton(
+        'Add New Category',
+        onPressed: () => showAddCategoryAlert(context),
       ),
+      appBar: CustomAppBar(title: 'Categories'),
       body: Padding(
         padding: EdgeInsets.all(16.w),
         child: GridView.builder(
