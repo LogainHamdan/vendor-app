@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PersonalCareScreen extends StatelessWidget {
+  static const id = '/care';
+
   const PersonalCareScreen({super.key});
 
   @override

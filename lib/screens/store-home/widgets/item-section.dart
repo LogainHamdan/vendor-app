@@ -22,60 +22,52 @@ class ItemsSection extends StatelessWidget {
       "Fries & Sides",
     ];
 
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.only(bottom: 16),
-          child: Container(
-            color: Colors.white,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+    return Container(
+      color: Colors.white,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
               children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: CustomSearchField(
-                          titleColor: titleColor,
-                          fillColor: greyBgColor,
-                          controller: TextEditingController(),
-                        ),
-                      ),
-                      const SizedBox(width: 16),
-                      SvgPicture.asset(addContainer, height: 40, width: 40),
-                    ],
+                Expanded(
+                  child: CustomSearchField(
+                    titleColor: titleColor,
+                    fillColor: greyBgColor,
+                    controller: TextEditingController(),
                   ),
                 ),
-
-                const SizedBox(height: 16),
-
-                SizedBox(
-                  height: 70,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child: ListView.separated(
-                      scrollDirection: Axis.horizontal,
-                      separatorBuilder:
-                          (context, index) => const SizedBox(width: 10),
-                      itemCount: categories.length,
-                      itemBuilder:
-                          (context, index) => CustomChip(
-                            label: categories[index],
-                            textColor: titleColor,
-                            borderColor: borderColor,
-                          ),
-                    ),
-                  ),
-                ),
-
-                SizedBox(height: 8.h),
-
-                ItemsGridView(items: items),
+                const SizedBox(width: 16),
+                SvgPicture.asset(addContainer, height: 40, width: 40),
               ],
             ),
           ),
-        ),
+
+          const SizedBox(height: 16),
+
+          SizedBox(
+            height: 70,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                separatorBuilder: (context, index) => const SizedBox(width: 10),
+                itemCount: categories.length,
+                itemBuilder:
+                    (context, index) => CustomChip(
+                      label: categories[index],
+                      textColor: titleColor,
+                      borderColor: borderColor,
+                    ),
+              ),
+            ),
+          ),
+
+          SizedBox(height: 8.h),
+
+          ItemsGridView(items: items),
+        ],
       ),
     );
   }

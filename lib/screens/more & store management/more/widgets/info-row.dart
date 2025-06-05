@@ -1,3 +1,4 @@
+import 'package:burger_home/screens/more%20&%20store%20management/more/widgets/profile-img.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -20,9 +21,10 @@ class InfoRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        CircleAvatar(radius: 100.r, child: image),
+        ProfileImage(height: 48, width: 48, img: person),
         SizedBox(width: 8.w),
         Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               name,

@@ -4,7 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ItemsGridView extends StatelessWidget {
   final List<Map<String, String>> items;
-  const ItemsGridView({super.key, required this.items});
+  final bool? stock;
+  const ItemsGridView({super.key, required this.items, this.stock = false});
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +18,14 @@ class ItemsGridView extends StatelessWidget {
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           mainAxisSpacing: 16,
+
           crossAxisSpacing: 16,
-          childAspectRatio: 0.95,
+          childAspectRatio: 0.7,
         ),
         itemBuilder: (context, index) {
           final item = items[index];
           return ProductGridItem(
+            stock: stock,
             imagePath: item['imagePath']!,
             title: item['title']!,
             price: item['price']!,

@@ -1,4 +1,5 @@
 import 'package:burger_home/screens/ad-details/widgets/custom-app-bar.dart';
+import 'package:burger_home/screens/edit-item/widgets/draggable-button.dart';
 import 'package:burger_home/screens/store-home/provider.dart';
 import 'package:burger_home/screens/store-home/widgets/info-card.dart';
 import 'package:burger_home/screens/store-home/widgets/item-section.dart';
@@ -41,76 +42,88 @@ class StoreHomePage extends StatelessWidget {
         body: SafeArea(
           child: Container(
             color: Colors.white,
-            child: Column(
-              children: [
-                const SizedBox(height: 16),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  const SizedBox(height: 16),
 
-                Stack(
-                  clipBehavior: Clip.none,
-                  children: [
-                    Image.asset(
-                      burgerCover,
-                      height: 178.h,
-                      width: double.infinity,
-                      fit: BoxFit.cover,
-                    ),
-                    Positioned(
-                      top: 10,
-                      right: 10,
-                      child: SvgPicture.asset(editIcon, height: 32, width: 32),
-                    ),
-                    Positioned(
-                      top: 130,
-                      left: 16,
-                      right: 16,
-                      child: InfoCard(),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 200),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 8,
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  Stack(
+                    clipBehavior: Clip.none,
                     children: [
-                      TabButton(
-                        label: "All Items",
-                        isSelected: tabProvider.showItems,
-                        onPressed: () => tabProvider.showAllItems(),
-                        selectedColor: blueColor,
-                        unselectedColor: Colors.white,
-                        selectedTextColor: Colors.white,
-                        unselectedTextColor: titleColor,
-                        selectedBorderColor: Colors.transparent,
-                        unselectedBorderColor: containerBorderLight,
+                      Image.asset(
+                        burgerCover,
+                        height: 178.h,
+                        width: double.infinity,
+                        fit: BoxFit.cover,
                       ),
-                      const SizedBox(width: 10),
-                      TabButton(
-                        label: "Reviews",
-                        isSelected: !tabProvider.showItems,
-                        onPressed: () => tabProvider.showReviews(),
-                        selectedColor: blueColor,
-                        unselectedColor: Colors.white,
-                        selectedTextColor: Colors.white,
-                        unselectedTextColor: titleColor,
-                        selectedBorderColor: Colors.transparent,
-                        unselectedBorderColor: containerBorderLight,
+                      Positioned(
+                        top: 10,
+                        right: 10,
+                        child: SvgPicture.asset(
+                          editIcon,
+                          height: 32,
+                          width: 32,
+                        ),
+                      ),
+                      Positioned(
+                        top: 130,
+                        left: 16,
+                        right: 16,
+                        child: InfoCard(),
                       ),
                     ],
                   ),
-                ),
+                  SizedBox(height: 200),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 8,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        TabButton(
+                          width: 168,
 
-                Expanded(
-                  child:
-                      tabProvider.showItems ? ItemsSection() : ReviewsSection(),
-                ),
-              ],
+                          label: "All Items",
+                          isSelected: tabProvider.showItems,
+                          onPressed: () => tabProvider.showAllItems(),
+                          selectedColor: blueColor,
+                          unselectedColor: Colors.white,
+                          selectedTextColor: Colors.white,
+                          unselectedTextColor: titleColor,
+                          selectedBorderColor: Colors.transparent,
+                          unselectedBorderColor: containerBorderLight,
+                        ),
+                        const SizedBox(width: 10),
+                        TabButton(
+                          width: 168,
+                          label: "Reviews",
+                          isSelected: !tabProvider.showItems,
+                          onPressed: () => tabProvider.showReviews(),
+                          selectedColor: blueColor,
+                          unselectedColor: Colors.white,
+                          selectedTextColor: Colors.white,
+                          unselectedTextColor: titleColor,
+                          selectedBorderColor: Colors.transparent,
+                          unselectedBorderColor: containerBorderLight,
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  tabProvider.showItems
+                      ? ItemsSection()
+                      : Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+                        child: ReviewsSection(),
+                      ),
+                ],
+              ),
             ),
           ),
         ),
+        bottomNavigationBar: DraggableButton(),
       ),
     );
   }

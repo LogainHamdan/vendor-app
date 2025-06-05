@@ -1,14 +1,16 @@
 import 'package:burger_home/constants/constants.dart';
 import 'package:burger_home/screens/ad-details/widgets/custom-app-bar.dart';
-import 'package:burger_home/screens/add-item/widgets/custom-parent-container.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/addons/data.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/addons/data.dart';
+import 'package:burger_home/screens/more%20&%20store%20management/addons/widgets/alerts/alerts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../add-item/widgets/draggable-button.dart';
+import '../../edit-item/widgets/draggable-button.dart';
+import '../categories/widgets/alerts/alerts.dart';
 
 class AddonsScreen extends StatelessWidget {
+  static const id = '/addons';
   const AddonsScreen({super.key});
 
   @override
@@ -62,8 +64,8 @@ class AddonsScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: DraggableButton(
-        'Add New Addon',
-        onPressed: () => showAddCategoryAlert(context),
+        title: 'Add New Addon',
+        onPressed: () => showNewAddonAlert(context),
       ),
     );
   }

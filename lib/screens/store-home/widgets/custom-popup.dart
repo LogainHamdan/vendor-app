@@ -2,19 +2,40 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../constants/constants.dart';
+import '../../ad-details/alerts/alerts.dart';
+import '../alerts/alerts.dart';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../constants/constants.dart';
+
+class PopupActionItem {
+  final String iconPath;
+  final String label;
+  final Color textColor;
+  final VoidCallback onTap;
+
+  PopupActionItem({
+    required this.iconPath,
+    required this.label,
+    required this.textColor,
+    required this.onTap,
+  });
+}
 
 class CustomPopup {
   static void show(
     BuildContext context,
     Offset position, {
+    required List<PopupActionItem> actions,
     double width = 164,
-    double height = 102,
-    VoidCallback? onEdit,
-    VoidCallback? onDelete,
+    double itemHeight = 48,
   }) {
     final RenderBox overlay =
         Overlay.of(context).context.findRenderObject() as RenderBox;
 
+    final double height = itemHeight * actions.length;
     final double left = position.dx - width / 2;
     final double top = position.dy - height;
     final double right = overlay.size.width - position.dx - width / 2;
@@ -42,36 +63,29 @@ class CustomPopup {
       ),
       shadowColor: Colors.black.withOpacity(0.08),
       menuPadding: EdgeInsets.all(8),
-      items: [
-        PopupMenuItem(
-          value: 'edit',
-          height: height / 2,
-          child: Row(
-            children: [
-              SvgPicture.asset(editIcon, height: 26, width: 26),
-              const SizedBox(width: 8),
-              Text('Edit', style: TextStyle(color: greenColor, fontSize: 14)),
-            ],
-          ),
-        ),
-        PopupMenuItem(
-          value: 'delete',
-          height: height / 2,
-          child: Row(
-            children: [
-              SvgPicture.asset(deleteIcon, height: 16, width: 16),
-              const SizedBox(width: 8),
-              Text(
-                'Delete',
-                style: TextStyle(color: deleteColor, fontSize: 14),
-              ),
-            ],
-          ),
-        ),
-      ],
-    ).then((value) {
-      if (value == 'edit') onEdit?.call();
-      if (value == 'delete') onDelete?.call();
+      items:
+          actions
+              .map(
+                (action) => PopupMenuItem(
+                  height: itemHeight,
+                  value: action,
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(action.iconPath, height: 20, width: 20),
+                      const SizedBox(width: 8),
+                      Text(
+                        action.label,
+                        style: TextStyle(color: action.textColor, fontSize: 14),
+                      ),
+                    ],
+                  ),
+                ),
+              )
+              .toList(),
+    ).then((selectedItem) {
+      if (selectedItem is PopupActionItem) {
+        selectedItem.onTap();
+      }
     });
   }
 }

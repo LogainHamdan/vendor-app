@@ -1,3 +1,4 @@
+import 'package:burger_home/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,14 +9,16 @@ class CustomElevatedButton extends StatelessWidget {
   final Color color;
   final double? width;
   final double? height;
+  final bool? outlined;
 
   const CustomElevatedButton({
     super.key,
     required this.text,
     required this.onPressed,
-    required this.color, // Default: burgundy
+    required this.color,
     this.width = double.infinity,
     this.height = 50,
+    this.outlined = false,
   });
 
   @override
@@ -32,12 +35,17 @@ class CustomElevatedButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
           ),
           elevation: 0,
+          side: outlined! ? BorderSide(color: titleColor) : null,
           shadowColor: Colors.transparent,
         ),
         child: Text(
           text,
           style: GoogleFonts.notoSans(
-            textStyle: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
+            textStyle: TextStyle(
+              fontSize: 16.sp,
+              fontWeight: FontWeight.bold,
+              color: outlined! ? blackColor : Colors.white,
+            ),
           ),
         ),
       ),

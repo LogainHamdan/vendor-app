@@ -42,6 +42,7 @@ class CustomReviewCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
+                  overflow: TextOverflow.ellipsis,
                   date,
                   style: TextStyle(
                     color: titleColor,
@@ -54,11 +55,8 @@ class CustomReviewCard extends StatelessWidget {
                 Row(
                   children: List.generate(
                     5,
-                    (index) => SvgPicture.asset(
-                      'assets/Star.svg',
-                      height: 14,
-                      width: 14,
-                    ),
+                    (index) =>
+                        SvgPicture.asset(starIcon, height: 14, width: 14),
                   ),
                 ),
                 SizedBox(height: 8),

@@ -1,13 +1,17 @@
 import 'package:burger_home/constants/constants.dart';
 import 'package:burger_home/screens/ad-details/widgets/custom-app-bar.dart';
 import 'package:burger_home/screens/ad-details/widgets/custom-text-field.dart';
-import 'package:burger_home/screens/add-item/widgets/custom-parent-container.dart';
-import 'package:burger_home/screens/add-item/widgets/draggable-button.dart';
+import 'package:burger_home/screens/more%20&%20store%20management/more/widgets/profile-img.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../edit-item/widgets/custom-parent-container.dart';
+import '../../edit-item/widgets/draggable-button.dart';
+
 class ProfileScreen extends StatelessWidget {
+  static const id = '/profile';
+
   const ProfileScreen({super.key});
 
   @override
@@ -21,15 +25,16 @@ class ProfileScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 122.0.w),
               child: Stack(
+                clipBehavior: Clip.none,
                 children: [
-                  CircleAvatar(
-                    radius: 100.r,
-                    backgroundColor: Colors.transparent,
+                  ProfileImage(height: 120, width: 120, img: person),
+                  Positioned(
+                    bottom: -8.h,
+                    right: -20.w,
                     child: SvgPicture.asset(
-                      person,
-                      fit: BoxFit.cover,
-                      height: 132.h,
-                      width: 132.w,
+                      editOrange,
+                      height: 32.h,
+                      width: 32.w,
                     ),
                   ),
                 ],
@@ -41,11 +46,13 @@ class ProfileScreen extends StatelessWidget {
             CustomTextField(hint: 'abdelrahman@gmail.com', label: 'Email'),
             SizedBox(height: 16.h),
             CustomTextField(hint: '599471582', label: 'Phone Number'),
-            SizedBox(height: 120.h),
           ],
         ),
       ),
-      bottomNavigationBar: DraggableButton('Save Changes', onPressed: () {}),
+      bottomNavigationBar: DraggableButton(
+        title: 'Save Changes',
+        onPressed: () {},
+      ),
     );
   }
 }

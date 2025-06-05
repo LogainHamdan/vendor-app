@@ -12,6 +12,8 @@ class CustomTextField extends StatelessWidget {
   final double? height;
   final double? width;
   final int? maxLines;
+  final Function()? suffixMethod;
+  final TextEditingController? controller;
 
   const CustomTextField({
     super.key,
@@ -23,7 +25,10 @@ class CustomTextField extends StatelessWidget {
     this.height = 42,
     this.width = 344,
     this.maxLines = 1,
+    this.suffixMethod,
+    this.controller,
   });
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -49,6 +54,9 @@ class CustomTextField extends StatelessWidget {
             borderRadius: BorderRadius.circular(14.r),
           ),
           child: TextField(
+            controller: controller,
+            focusNode: AlwaysDisabledFocusNode(),
+
             maxLines: maxLines,
             keyboardType: keyboardType,
             onChanged: onChanged,
@@ -65,16 +73,23 @@ class CustomTextField extends StatelessWidget {
                 color: titleColor,
               ),
               border: InputBorder.none,
-              contentPadding: const EdgeInsets.symmetric(
-                horizontal: 12,
-                vertical: 14,
-              ),
               isDense: true,
-              suffix:
+              contentPadding: EdgeInsets.symmetric(
+                horizontal: 12.w,
+                vertical: 12.h,
+              ),
+              suffixIcon:
                   suffixIcon != null
-                      ? Padding(
-                        padding: const EdgeInsets.only(right: 8),
-                        child: suffixIcon,
+                      ? GestureDetector(
+                        onTap: suffixMethod,
+                        child: Padding(
+                          padding: EdgeInsets.only(right: 8.w),
+                          child: SizedBox(
+                            height: 20.h,
+                            width: 20.w,
+                            child: Center(child: suffixIcon),
+                          ),
+                        ),
                       )
                       : null,
             ),
@@ -83,4 +98,9 @@ class CustomTextField extends StatelessWidget {
       ],
     );
   }
+}
+
+class AlwaysDisabledFocusNode extends FocusNode {
+  @override
+  bool get hasFocus => true;
 }

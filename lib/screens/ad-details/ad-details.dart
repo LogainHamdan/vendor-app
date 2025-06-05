@@ -12,6 +12,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
+import 'alerts/alerts.dart';
+
 class AdDetailsScreen extends StatelessWidget {
   static const id = '/details';
 
@@ -177,7 +179,7 @@ class AdDetailsScreen extends StatelessWidget {
                               (day) => ScheduleRowWidget(
                                 day: day,
                                 timeRange: "11:00 AM - 8:00 PM",
-                                onAdd: () {},
+                                onAdd: () => showScheduleAlert(context),
                               ),
                             )
                             .toList(),

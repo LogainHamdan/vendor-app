@@ -8,8 +8,7 @@ class HeaderTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 106.0).w,
+    return Center(
       child: Text(
         textAlign: TextAlign.center,
         title,

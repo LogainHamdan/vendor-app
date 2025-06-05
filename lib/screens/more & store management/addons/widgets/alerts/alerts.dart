@@ -14,52 +14,62 @@ void showNewAddonAlert(BuildContext context) async {
     builder: (BuildContext context) {
       return Align(
         alignment: Alignment.bottomCenter,
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+        child: SizedBox(
+          height:
+              MediaQuery.of(context).size.height * 0.6, // 👈 limit height here
+
           child: Material(
             color: Colors.white,
-            elevation: 10.h,
             borderRadius: BorderRadius.vertical(top: Radius.circular(20.r)),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                      icon: SvgPicture.asset(
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.0.w,
+                      vertical: 36.h,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        HeaderTitle(title: 'Add New Addon'),
+                        SizedBox(height: 16.h),
+                        CustomTextField(
+                          hint: 'Addon Name (English)',
+                          label: 'Addon Name (English)',
+                        ),
+                        SizedBox(height: 16.h),
+                        CustomTextField(
+                          hint: 'Addon Name (Arabic)',
+                          label: 'Addon Name (Arabic)',
+                        ),
+                        SizedBox(height: 16.h),
+                        CustomTextField(hint: 'Price', label: 'Price'),
+                        SizedBox(height: 16.h),
+                        CustomElevatedButton(
+                          text: 'Add',
+                          onPressed: () {},
+                          color: burgundyColor,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Positioned(
+                    top: -8,
+                    left: 16,
+                    child: GestureDetector(
+                      onTap: () => Navigator.pop(context),
+                      child: SvgPicture.asset(
                         closeIcon,
                         height: 32.h,
                         width: 32.w,
                       ),
-                      onPressed: () => Navigator.of(context).pop(),
                     ),
-                    SizedBox(width: 24.w),
-                  ],
-                ),
-                SizedBox(height: 8.h),
-                HeaderTitle(title: 'Add New Addon'),
-                SizedBox(height: 16.h),
-                CustomTextField(
-                  hint: 'Addon Name (English)',
-                  label: 'Addon Name (English)',
-                ),
-                SizedBox(height: 16.h),
-                CustomTextField(
-                  hint: 'Addon Name (Arabic)',
-                  label: 'Addon Name (Arabic)',
-                ),
-                SizedBox(height: 16.h),
-                CustomTextField(hint: 'Price', label: 'Price'),
-                SizedBox(height: 16.h),
-                CustomElevatedButton(
-                  text: 'Add',
-                  onPressed: () {},
-                  color: burgundyColor,
-                ),
-                SizedBox(height: 16.h),
-              ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),

@@ -40,9 +40,9 @@ class CustomSwitchTile extends StatelessWidget {
               fit: BoxFit.fill,
               child: Switch(
                 value: value,
-                activeColor: greenColor,
+                activeColor: Colors.white,
+                activeTrackColor: greenColor,
                 onChanged: onChanged,
-                inactiveTrackColor: Colors.grey.shade300,
               ),
             ),
           ),
