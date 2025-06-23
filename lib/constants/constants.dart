@@ -18,6 +18,11 @@ Color numberColor = Color(0xFF292D32BF);
 Color searchColor = Color(0xFF8F8F8);
 Color orangeColor = Color(0xFFE28D00);
 Color calendarColor = Color(0xFFB5BEC6);
+Color greyStepperColor = Color(0xFFD1D3D4);
+Color yellowBgColor = Color(0xFFFFFBEF);
+Color blueBgColor = Color(0xFFEFF8FF);
+Color greenBgColor = Color(0xFFF8FFF7);
+Color cardBgColor = Color(0x750F220D);
 
 ///img paths
 
@@ -27,6 +32,28 @@ String ordersIcon = 'assets/navigation/box.svg';
 String walletIcon = 'assets/navigation/empty-wallet.svg';
 String homeIcon = 'assets/navigation/home.svg';
 String moreIcon = 'assets/navigation/more-circle.svg';
+
+//starting
+String logo = 'assets/starting/لوجو موقع 2 لون ابيض.svg';
+String vendorAppTitle = 'assets/starting/Rectangle 34624101.svg';
+String orangeInfoCircle = 'assets/starting/info-circle.svg';
+String ribbonsIcon = 'assets/starting/Ribbons.svg';
+String invisibleEyeIcon = 'assets/starting/invisible-eye.svg';
+String visibleEyeIcon = 'assets/starting/eye.svg';
+String subscriptionImage = 'assets/starting/Frame 2147226174.svg';
+String successIcon = 'assets/starting/Icon Success.svg';
+String palestineIcon =
+    'assets/starting/emojione_flag-for-palestinian-territories.svg';
+
+//home
+String walmartSymbol = 'assets/home/img.png';
+String notificationIcon = 'assets/home/notification.svg';
+String eyeBlackIcon = 'assets/home/eye.svg';
+String greenNotesIcon = 'assets/home/Frame 2147226197.svg';
+String boostBlueIcon = 'assets/home/Frame 2147226395.svg';
+String boostYellowIcon = 'assets/home/Frame 2147226395-1.svg';
+String boostGreenIcon = 'assets/home/Frame 2147226395-2.svg';
+String avatarIcon = 'assets/home/Avatar type.png';
 
 //store
 
@@ -87,7 +114,7 @@ String termsCircle = 'assets/more/icon-17.svg';
 String logoutCircle = 'assets/more/icon-18.svg';
 String sendFilledIcon = 'assets/more/iconamoon_send-fill.svg';
 String attachIcon = 'assets/more/Paperclip 2.svg';
-String bannerImg = 'assets/more/img_1.png';
+String bannerImg = 'assets/home/Frame 2147225850.png';
 String deleteCircleIcon = 'assets/more/Frame 2147226510.svg';
 String editCircleIcon = 'assets/more/Frame 2147226509.svg';
 String uploadBannerContainer = 'assets/more/Frame 2147225934.svg';

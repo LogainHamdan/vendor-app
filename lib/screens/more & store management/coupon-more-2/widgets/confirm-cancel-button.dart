@@ -12,44 +12,51 @@ class ConfirmCancelButton extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        ElevatedButton(
-          onPressed: onPressed,
-          style: ElevatedButton.styleFrom(
-            textStyle: GoogleFonts.notoSans(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w500,
+        Expanded(
+          child: ElevatedButton(
+            onPressed: onPressed,
+            style: ElevatedButton.styleFrom(
+              textStyle: GoogleFonts.notoSans(
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w500,
+              ),
+              backgroundColor: Colors.white,
+              //  minimumSize: Size(120.w, 42.h),
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.r),
+                side: BorderSide(color: blackColor, width: 0.5),
+              ),
             ),
-            backgroundColor: Colors.white,
-            minimumSize: Size(120.w, 42.h),
-            elevation: 0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12.r),
-              side: BorderSide(color: blackColor, width: 0.5),
+            child: Text(
+              'Cancel',
+              style: TextStyle(color: blackColor, fontWeight: FontWeight.bold),
             ),
-          ),
-          child: Text(
-            'Cancel',
-            style: TextStyle(color: blackColor, fontWeight: FontWeight.bold),
           ),
         ),
         SizedBox(width: 10.w),
-        ElevatedButton(
-          onPressed: onPressed,
-          style: ElevatedButton.styleFrom(
-            textStyle: GoogleFonts.notoSans(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w500,
+        Expanded(
+          child: ElevatedButton(
+            onPressed: onPressed,
+            style: ElevatedButton.styleFrom(
+              textStyle: GoogleFonts.notoSans(
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w500,
+              ),
+              backgroundColor: burgundyColor,
+              //   minimumSize: Size(120.w, 42.h),
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.r),
+              ),
             ),
-            backgroundColor: burgundyColor,
-            minimumSize: Size(120.w, 42.h),
-            elevation: 0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12.r),
+            child: Text(
+              'Confirm',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-          child: Text(
-            'Confirm',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ),
       ],

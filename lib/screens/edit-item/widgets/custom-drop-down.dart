@@ -12,6 +12,7 @@ class CustomDropdownFormField extends StatelessWidget {
   final List<String> items;
   final String providerKey;
   final double? width;
+  final String? hint;
 
   const CustomDropdownFormField({
     required this.label,
@@ -19,6 +20,7 @@ class CustomDropdownFormField extends StatelessWidget {
     required this.providerKey,
     super.key,
     this.width = double.infinity,
+    this.hint = '',
   });
 
   @override
@@ -44,7 +46,7 @@ class CustomDropdownFormField extends StatelessWidget {
             child: DropdownButtonFormField<String>(
               value: selectedValue,
               hint: Text(
-                label,
+                hint != '' ? hint! : label,
                 style: GoogleFonts.poppins(fontSize: 14.sp, color: titleColor),
               ),
               items:

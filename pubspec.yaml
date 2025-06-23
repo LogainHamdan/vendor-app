@@ -40,6 +40,7 @@ dependencies:
   google_fonts: ^6.2.1
   table_calendar: ^3.1.0
   intl:
+  flutter_switch: ^0.3.2
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +70,9 @@ flutter:
    - assets/more/
    - assets/more/categories/
    - assets/more/vuesax/linear/
+   - assets/navigation/
+   - assets/starting/
+   - assets/home/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

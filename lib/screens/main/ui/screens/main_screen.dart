@@ -1,3 +1,4 @@
+import 'package:burger_home/screens/home%20&%20wallet/home/home-screen.dart';
 import 'package:burger_home/screens/main/ui/screens/provider.dart';
 import 'package:burger_home/screens/store-home/burger-home.dart';
 import 'package:flutter/cupertino.dart';
@@ -14,14 +15,16 @@ class MainScreen extends StatelessWidget {
   MainScreen({super.key});
 
   final List<String> icons = [
-    storeIcon,
+    homeIcon,
+
     ordersIcon,
     walletIcon,
-    homeIcon,
+    storeIcon,
+
     moreIcon,
   ];
   final List<Widget> screens = const [
-    StoreHomePage(),
+    HomeScreen(),
     StoreHomePage(),
     StoreHomePage(),
     StoreHomePage(),
@@ -76,10 +79,6 @@ class MainScreen extends StatelessWidget {
                             icons[index],
                             width: 24.sp,
                             height: 24.sp,
-                            color:
-                                bottomNavProvider.currentIndex == index
-                                    ? burgundyColor
-                                    : titleColor,
                           )
                           : SvgPicture.asset(
                             icons[index],

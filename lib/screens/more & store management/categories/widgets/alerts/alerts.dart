@@ -19,33 +19,37 @@ void showAddCategoryAlert(BuildContext context) {
           elevation: 10.h,
           borderRadius: BorderRadius.vertical(top: Radius.circular(20.r)),
           child: Stack(
+            clipBehavior: Clip.none,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  SizedBox(height: 8.h),
-                  HeaderTitle(title: 'Add New Category'),
-                  SizedBox(height: 16.h),
-                  CustomTextField(
-                    hint: 'Category Name (English)',
-                    label: 'Category Name (English)',
-                  ),
-                  SizedBox(height: 16.h),
-                  CustomTextField(
-                    hint: 'Category Name (Arabic)',
-                    label: 'Category Name (Arabic)',
-                  ),
-                  SizedBox(height: 16.h),
-                  SvgPicture.asset(uploadCategory, width: double.infinity),
-                  SizedBox(height: 16.h),
-                  CustomElevatedButton(
-                    text: 'Add',
-                    onPressed: () {},
-                    color: burgundyColor,
-                  ),
-                  SizedBox(height: 16.h),
-                ],
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SizedBox(height: 8.h),
+                    HeaderTitle(title: 'Add New Category'),
+                    SizedBox(height: 16.h),
+                    CustomTextField(
+                      hint: 'Category Name (English)',
+                      label: 'Category Name (English)',
+                    ),
+                    SizedBox(height: 16.h),
+                    CustomTextField(
+                      hint: 'Category Name (Arabic)',
+                      label: 'Category Name (Arabic)',
+                    ),
+                    SizedBox(height: 16.h),
+                    SvgPicture.asset(uploadCategory, width: double.infinity),
+                    SizedBox(height: 16.h),
+                    CustomElevatedButton(
+                      text: 'Add',
+                      onPressed: () {},
+                      color: burgundyColor,
+                    ),
+                    SizedBox(height: 16.h),
+                  ],
+                ),
               ),
               Positioned(
                 top: -10,

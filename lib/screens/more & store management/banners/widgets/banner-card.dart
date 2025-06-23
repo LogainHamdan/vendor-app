@@ -17,7 +17,7 @@ class BannerCard extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
       child: Column(
         children: [
-          Image.asset(bannerImg, height: 112.h, width: double.infinity),
+          Image.asset(bannerImg, width: double.infinity),
           SizedBox(height: 16.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

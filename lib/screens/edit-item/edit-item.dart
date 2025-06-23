@@ -35,36 +35,40 @@ class EditItemScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Consumer<AddItemProvider>(
-                          builder: (context, provider, child) {
-                            return TabButton(
-                              label: "العربية",
-                              isSelected: provider.showArabic,
-                              onPressed: () => provider.showArabicTab(),
-                              selectedColor: blueColor,
-                              unselectedColor: Colors.white,
-                              selectedTextColor: Colors.white,
-                              unselectedTextColor: titleColor,
-                              selectedBorderColor: Colors.transparent,
-                              unselectedBorderColor: containerBorderLight,
-                            );
-                          },
+                        Expanded(
+                          child: Consumer<AddItemProvider>(
+                            builder: (context, provider, child) {
+                              return TabButton(
+                                label: "العربية",
+                                isSelected: provider.showArabic,
+                                onPressed: () => provider.showArabicTab(),
+                                selectedColor: blueColor,
+                                unselectedColor: Colors.white,
+                                selectedTextColor: Colors.white,
+                                unselectedTextColor: titleColor,
+                                selectedBorderColor: Colors.transparent,
+                                unselectedBorderColor: containerBorderLight,
+                              );
+                            },
+                          ),
                         ),
                         SizedBox(width: 10.w),
-                        Consumer<AddItemProvider>(
-                          builder: (context, provider, child) {
-                            return TabButton(
-                              label: "English",
-                              isSelected: !provider.showArabic,
-                              onPressed: () => provider.showEnglishTab(),
-                              selectedColor: blueColor,
-                              unselectedColor: Colors.white,
-                              selectedTextColor: Colors.white,
-                              unselectedTextColor: titleColor,
-                              selectedBorderColor: Colors.transparent,
-                              unselectedBorderColor: containerBorderLight,
-                            );
-                          },
+                        Expanded(
+                          child: Consumer<AddItemProvider>(
+                            builder: (context, provider, child) {
+                              return TabButton(
+                                label: "English",
+                                isSelected: !provider.showArabic,
+                                onPressed: () => provider.showEnglishTab(),
+                                selectedColor: blueColor,
+                                unselectedColor: Colors.white,
+                                selectedTextColor: Colors.white,
+                                unselectedTextColor: titleColor,
+                                selectedBorderColor: Colors.transparent,
+                                unselectedBorderColor: containerBorderLight,
+                              );
+                            },
+                          ),
                         ),
                       ],
                     ),

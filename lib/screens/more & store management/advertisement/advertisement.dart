@@ -3,6 +3,7 @@ import 'package:burger_home/screens/edit-item/widgets/custom-parent-container.da
 import 'package:burger_home/screens/edit-item/widgets/draggable-button.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/advertisement/provider.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/advertisement/widgets/ad-card.dart';
+import 'package:burger_home/screens/more%20&%20store%20management/advertisement/widgets/orders-section.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/categories/widgets/header-title.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,67 +20,7 @@ class AdvertisementScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: CustomParentContainer(
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.h),
-              child: HeaderTitle(title: 'All Orders'),
-            ),
-            Consumer<AdvertisementProvider>(
-              builder:
-                  (context, provider, child) => SizedBox(
-                    height: 36.h,
-                    child: ListView.separated(
-                      scrollDirection: Axis.horizontal,
-                      separatorBuilder:
-                          (context, index) => SizedBox(width: 10.w),
-                      itemBuilder: (context, index) {
-                        final tab = provider.tabs[index];
-                        return TabButton(
-                          height: 36.h,
-
-                          label: tab["label"],
-                          useFixedWidth: false,
-                          isSelected: tab["selected"],
-                          onPressed: () {},
-                          selectedColor: blueColor,
-                          unselectedColor: Colors.white,
-                          selectedTextColor: Colors.white,
-                          unselectedTextColor: titleColor,
-                          selectedBorderColor: Colors.transparent,
-                          unselectedBorderColor: containerBorderLight,
-                        );
-                      },
-
-                      itemCount: provider.tabs.length,
-                    ),
-                  ),
-            ),
-            SizedBox(height: 16.h),
-            Consumer<AdvertisementProvider>(
-              builder:
-                  (context, provider, child) => ListView.separated(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: provider.adList.length,
-                    separatorBuilder:
-                        (context, index) => SizedBox(height: 16.h),
-                    itemBuilder: (context, index) {
-                      final ad = provider.adList[index];
-                      return AdCard(
-                        adId: ad["adId"]!,
-                        type: ad["type"]!,
-                        placedDate: ad["placedDate"]!,
-                        duration: ad["duration"]!,
-                        onTap: () {},
-                      );
-                    },
-                  ),
-            ),
-          ],
-        ),
-      ),
+      body: SafeArea(child: CustomParentContainer(children: [OrdersSection()])),
       appBar: CustomAppBar(title: 'Advertisement'),
       bottomNavigationBar: DraggableButton(
         title: 'Add New Ad',

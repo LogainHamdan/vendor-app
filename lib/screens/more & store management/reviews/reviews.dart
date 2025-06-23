@@ -17,19 +17,21 @@ class ReviewsScreen extends StatelessWidget {
       appBar: CustomAppBar(title: 'Reviews'),
 
       body: SafeArea(
-        child: CustomParentContainer(
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0.h),
-              child: CustomSearchField(
-                titleColor: titleColor,
-                width: double.infinity,
-                fillColor: greyBgColor,
-                controller: TextEditingController(),
+        child: SingleChildScrollView(
+          child: CustomParentContainer(
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 16.0.h),
+                child: CustomSearchField(
+                  titleColor: titleColor,
+                  width: double.infinity,
+                  fillColor: greyBgColor,
+                  controller: TextEditingController(),
+                ),
               ),
-            ),
-            ReviewsSection(),
-          ],
+              ReviewsSection(),
+            ],
+          ),
         ),
       ),
     );

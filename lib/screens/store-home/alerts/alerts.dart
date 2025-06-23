@@ -24,7 +24,7 @@ Future<void> showDeleteAlert(
             clipBehavior: Clip.none,
             children: [
               SizedBox(
-                height: 170.h,
+                height: 174.h,
                 child: Material(
                   color: Colors.white,
                   borderRadius: BorderRadius.vertical(

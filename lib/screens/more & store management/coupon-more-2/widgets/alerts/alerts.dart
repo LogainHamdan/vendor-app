@@ -22,6 +22,7 @@ void showDatePickerDialog(
         builder:
             (context, setState) => BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 1, sigmaY: 1),
+
               child: AlertDialog(
                 backgroundColor: Colors.white,
                 shape: RoundedRectangleBorder(

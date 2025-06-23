@@ -25,7 +25,7 @@ class DraggableButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 80.h,
+      height: 87.h,
       child: DraggableScrollableSheet(
         initialChildSize: 1,
         minChildSize: 0.4,
