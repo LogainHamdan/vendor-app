@@ -12,8 +12,6 @@ import '../../edit-item/widgets/draggable-button.dart';
 import 'data.dart';
 
 class MoreScreen extends StatelessWidget {
-  static const id = '/more';
-
   const MoreScreen({super.key});
 
   @override

@@ -4,13 +4,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FilledContainer extends StatelessWidget {
   final Widget child;
+  final bool? symmetricPadding;
 
-  const FilledContainer({super.key, required this.child});
+  const FilledContainer({
+    super.key,
+    required this.child,
+    this.symmetricPadding = true,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16.w),
+      padding:
+          !symmetricPadding!
+              ? EdgeInsets.only(left: 16.w, top: 16.h)
+              : EdgeInsets.all(16.w),
       alignment: Alignment.centerLeft,
       decoration: BoxDecoration(
         color: containerColor,

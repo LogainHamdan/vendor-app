@@ -23,17 +23,21 @@ class PlanDetails extends StatelessWidget {
             Row(
               children: [
                 CustomOption(
-                  context: context,
                   title: "Commission Base",
                   isSelected: !provider.isSubscriptionBase,
-                  onTap: () => provider.toggleCommissionType(false),
+                  onTap:
+                      () => provider.toggleCommissionType(
+                        !provider.isSubscriptionBase,
+                      ),
                 ),
                 SizedBox(width: 16.w),
                 CustomOption(
-                  context: context,
                   title: "Subscription Base",
                   isSelected: provider.isSubscriptionBase,
-                  onTap: () => provider.toggleCommissionType(true),
+                  onTap:
+                      () => provider.toggleCommissionType(
+                        !provider.isSubscriptionBase,
+                      ),
                 ),
               ],
             ),

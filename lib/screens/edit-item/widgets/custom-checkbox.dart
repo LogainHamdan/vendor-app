@@ -1,9 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 import '../../../constants/constants.dart';
 import '../provider.dart';
+
+import 'package:custom_check_box/custom_check_box.dart';
 
 class CustomCheckbox extends StatelessWidget {
   final String title;
@@ -20,24 +23,22 @@ class CustomCheckbox extends StatelessWidget {
     final isChecked = context.watch<AddItemProvider>().isChecked(providerKey);
 
     return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        GestureDetector(
-          onTap: () => context.read<AddItemProvider>().toggleCheck(providerKey),
-          child: Container(
-            width: 15.w,
-            height: 15.h,
-            decoration: BoxDecoration(
-              color: isChecked ? Colors.black : Colors.transparent,
-              border: Border.all(color: titleColor, width: 2.w),
-            ),
-            child:
-                isChecked
-                    ? Icon(Icons.check, color: Colors.white, size: 16.sp)
-                    : null,
-          ),
+        CustomCheckBox(
+          value: isChecked,
+          shouldShowBorder: true,
+
+          borderColor: titleColor,
+          checkedFillColor: blueColor,
+          borderRadius: 6.r,
+          borderWidth: 2.w,
+          checkBoxSize: 20.w,
+          splashColor: Colors.transparent,
+          checkedIcon: CupertinoIcons.checkmark_alt,
+          onChanged: (val) {
+            context.read<AddItemProvider>().toggleCheck(providerKey);
+          },
         ),
-        const SizedBox(width: 8),
         Text(
           title,
           style: TextStyle(

@@ -101,6 +101,7 @@ void showDatePickerDialog(
                 ),
                 actions: [
                   ConfirmCancelButton(
+                    onCancelPressed: () {},
                     onPressed: () {
                       Navigator.pop(context);
                     },

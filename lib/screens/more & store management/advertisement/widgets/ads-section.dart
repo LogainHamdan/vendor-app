@@ -1,4 +1,5 @@
 import 'package:burger_home/screens/ad-details/widgets/custom-title.dart';
+import 'package:burger_home/screens/home%20&%20wallet/orders/widgets/order-card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -9,8 +10,8 @@ import '../../categories/widgets/header-title.dart';
 import '../provider.dart';
 import 'ad-card.dart';
 
-class OrdersSection extends StatelessWidget {
-  const OrdersSection({super.key});
+class AdsSection extends StatelessWidget {
+  const AdsSection({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,20 +1,21 @@
 import 'package:burger_home/constants/constants.dart';
 import 'package:burger_home/screens/ad-details/widgets/custom-title.dart';
+import 'package:burger_home/screens/edit-item/widgets/custom-checkbox.dart';
 import 'package:burger_home/screens/edit-item/widgets/custom-parent-container.dart';
 import 'package:burger_home/screens/home%20&%20wallet/home/provider.dart';
 import 'package:burger_home/screens/home%20&%20wallet/home/widgets/checking-container.dart';
 import 'package:burger_home/screens/home%20&%20wallet/home/widgets/filled-container.dart';
 import 'package:burger_home/screens/home%20&%20wallet/home/widgets/sales-boost.dart';
-import 'package:burger_home/screens/more%20&%20store%20management/advertisement/widgets/orders-section.dart';
+import 'package:burger_home/screens/more%20&%20store%20management/advertisement/widgets/ads-section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class HomeScreen extends StatelessWidget {
-  static const id = '/home-screen';
+import '../orders/widgets/orders-section.dart';
 
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
@@ -262,7 +263,19 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 24.h),
-                    OrdersSection(),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 16.h),
+                      child: CustomTitle(title: 'All Orders'),
+                    ),
+
+                    Consumer<HomeProvider>(
+                      builder:
+                          (context, provider, child) => OrdersSection(
+                            checkbox: true,
+                            allTypes: true,
+                            tabs: provider.allOrderTabs,
+                          ),
+                    ),
                   ],
                 ),
               ),

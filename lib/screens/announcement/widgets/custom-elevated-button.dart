@@ -10,6 +10,7 @@ class CustomElevatedButton extends StatelessWidget {
   final double? width;
   final double? height;
   final bool? outlined;
+  final Widget? icon;
 
   const CustomElevatedButton({
     super.key,
@@ -19,6 +20,7 @@ class CustomElevatedButton extends StatelessWidget {
     this.width = double.infinity,
     this.height = 50,
     this.outlined = false,
+    this.icon,
   });
 
   @override
@@ -38,15 +40,22 @@ class CustomElevatedButton extends StatelessWidget {
           side: outlined! ? BorderSide(color: titleColor) : null,
           shadowColor: Colors.transparent,
         ),
-        child: Text(
-          text,
-          style: GoogleFonts.notoSans(
-            textStyle: TextStyle(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.bold,
-              color: outlined! ? blackColor : Colors.white,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (icon != null) icon!,
+            if (icon != null) SizedBox(width: 3.w),
+            Text(
+              text,
+              style: GoogleFonts.notoSans(
+                textStyle: TextStyle(
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.bold,
+                  color: outlined! ? blackColor : Colors.white,
+                ),
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );

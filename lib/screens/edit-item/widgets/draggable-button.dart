@@ -11,6 +11,7 @@ class DraggableButton extends StatelessWidget {
   final bool? button;
   final Widget? child;
   final bool? outlined;
+  final Widget? upperWidget;
 
   const DraggableButton({
     super.key,
@@ -20,12 +21,13 @@ class DraggableButton extends StatelessWidget {
     this.button = true,
     this.child,
     this.outlined = false,
+    this.upperWidget,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 87.h,
+      height: upperWidget != null ? 140.h : 87.h,
       child: DraggableScrollableSheet(
         initialChildSize: 1,
         minChildSize: 0.4,
@@ -50,10 +52,21 @@ class DraggableButton extends StatelessWidget {
                     ? Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        SizedBox(height: 16.h),
+                        upperWidget != null
+                            ? Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 16.0.w,
+                                vertical: 8.h,
+                              ),
+
+                              child: upperWidget!,
+                            )
+                            : SizedBox(height: 16.h),
+
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 16.0),
                           child: CustomElevatedButton(
+                            icon: icon,
                             text: title ?? '',
                             outlined: outlined,
                             onPressed: onPressed ?? () {},

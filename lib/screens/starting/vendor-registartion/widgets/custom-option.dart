@@ -8,16 +8,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CustomOption extends StatelessWidget {
   const CustomOption({
     super.key,
-    required this.context,
     required this.title,
     required this.isSelected,
     required this.onTap,
+    this.icon,
   });
 
-  final BuildContext context;
   final String title;
   final bool isSelected;
   final VoidCallback onTap;
+  final Widget? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -29,29 +29,31 @@ class CustomOption extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.transparent,
             border: Border.all(
-              color: isSelected ? blueColor : Colors.grey.shade300,
+              color: isSelected ? blueColor : containerBorderLight,
               width: 1.w,
             ),
-            borderRadius: BorderRadius.circular(16.r),
+            borderRadius: BorderRadius.circular(10.r),
           ),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              SizedBox(width: 16.w),
               Icon(
                 isSelected
                     ? Icons.radio_button_checked
                     : Icons.radio_button_off,
-                color: isSelected ? blueColor : Colors.grey,
+                color: isSelected ? blueColor : titleColor,
                 size: 20.sp,
               ),
               SizedBox(width: 16.w),
+              if (icon != null) ...[icon!, SizedBox(width: 8.w)],
               SizedBox(
                 width: 96.w,
                 child: Text(
                   title,
                   style: TextStyle(
                     color: blackColor,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.bold,
                     fontSize: 14.sp,
                   ),
                 ),

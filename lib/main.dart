@@ -2,6 +2,9 @@ import 'package:burger_home/screens/ad-details/provider.dart';
 import 'package:burger_home/screens/edit-item/provider.dart';
 import 'package:burger_home/screens/home%20&%20wallet/home/provider.dart';
 import 'package:burger_home/screens/home%20&%20wallet/notfications/provider.dart';
+import 'package:burger_home/screens/home%20&%20wallet/orders/provider.dart';
+import 'package:burger_home/screens/home%20&%20wallet/pending-order-details/provider.dart';
+import 'package:burger_home/screens/home%20&%20wallet/wallet/provider.dart';
 import 'package:burger_home/screens/main/ui/screens/provider.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/ad-details-more-2/provider.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/advertisement/provider.dart';
@@ -34,6 +37,9 @@ void main() {
         ChangeNotifierProvider(create: (_) => RegistrationProvider()),
         ChangeNotifierProvider(create: (_) => HomeProvider()),
         ChangeNotifierProvider(create: (_) => NotificationsProvider()),
+        ChangeNotifierProvider(create: (_) => OrderDetailsProvider()),
+        ChangeNotifierProvider(create: (_) => OrdersProvider()),
+        ChangeNotifierProvider(create: (_) => WalletProvider()),
       ],
 
       child: MyMaterialApp(),

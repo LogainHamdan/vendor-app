@@ -6,6 +6,14 @@ import '../../../constants/constants.dart';
 
 class HomeProvider extends ChangeNotifier {
   bool restClosed = false;
+  final List<Map<String, dynamic>> allOrderTabs = [
+    {"label": "All (4)", "selected": true},
+    {"label": "pending(5)", "selected": false},
+    {"label": "running(9)", "selected": false},
+    {"label": "running(9)", "selected": false},
+    {"label": "running(9)", "selected": false},
+    {"label": "running(9)", "selected": false},
+  ];
   final List<Map<String, dynamic>> ordersItems = [
     {
       'title': 'Order #1234',

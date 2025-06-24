@@ -20,9 +20,12 @@ Color orangeColor = Color(0xFFE28D00);
 Color calendarColor = Color(0xFFB5BEC6);
 Color greyStepperColor = Color(0xFFD1D3D4);
 Color yellowBgColor = Color(0xFFFFFBEF);
+Color pendingColor = Color(0xFFFFBA49);
 Color blueBgColor = Color(0xFFEFF8FF);
 Color greenBgColor = Color(0xFFF8FFF7);
+Color confirmedColor = Color(0xFF008080);
 Color cardBgColor = Color(0x750F220D);
+Color deepGreenColor = Color(0xFF046333);
 
 ///img paths
 
@@ -54,9 +57,18 @@ String boostBlueIcon = 'assets/home/Frame 2147226395.svg';
 String boostYellowIcon = 'assets/home/Frame 2147226395-1.svg';
 String boostGreenIcon = 'assets/home/Frame 2147226395-2.svg';
 String avatarIcon = 'assets/home/Avatar type.png';
+String chatIcon = 'assets/home/chat.svg';
+String printerIcon = 'assets/home/printer.svg';
+String warningIcon = 'assets/home/img_1.png';
+String timerImage = 'assets/home/img_2.png';
+String tickImage = 'assets/home/Vector.svg';
+String paymentImage = 'assets/home/img_3.png';
+String withdrawImage = 'assets/home/img_4.png';
+String payImage = 'assets/home/img_5.png';
+String instaPayIcon = 'assets/home/Layer_1-2.svg';
+String paypalIcon = 'assets/home/logos_paypal.svg';
 
 //store
-
 String burgerCover = 'assets/7003462f4a36ee053da12be160e7c9f4.png';
 String soundIcon = 'assets/img_2.png';
 String clockIcon = 'assets/img_2.png';

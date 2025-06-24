@@ -2,8 +2,15 @@ import 'package:burger_home/constants/constants.dart';
 import 'package:burger_home/screens/ad-details/ad-details.dart';
 import 'package:burger_home/screens/announcement/announcement.dart';
 import 'package:burger_home/screens/edit-item/edit-item.dart';
+import 'package:burger_home/screens/home%20&%20wallet/confirmed-order-details/confirmed-order-details.dart';
+import 'package:burger_home/screens/home%20&%20wallet/cooking-order-details/cooking-order-details.dart';
+import 'package:burger_home/screens/home%20&%20wallet/delivered-order-details/delivered-order-details.dart';
+import 'package:burger_home/screens/home%20&%20wallet/handover-order-details/handover-order-details.dart';
 import 'package:burger_home/screens/home%20&%20wallet/home/home-screen.dart';
 import 'package:burger_home/screens/home%20&%20wallet/notfications/notifications.dart';
+import 'package:burger_home/screens/home%20&%20wallet/on-way-order-details/on-way-order-details.dart';
+import 'package:burger_home/screens/home%20&%20wallet/orders/orders.dart';
+import 'package:burger_home/screens/home%20&%20wallet/pending-order-details/pending-order-details.dart';
 import 'package:burger_home/screens/main/ui/screens/main_screen.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/ad-details-more-2/ad-details-more-2.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/ad-details/ad-details.dart';
@@ -66,14 +73,13 @@ class MyMaterialApp extends StatelessWidget {
               ),
             ),
           ),
-          initialRoute: NotificationsScreen.id,
+          initialRoute: MainScreen.id,
           routes: {
             MainScreen.id: (context) => MainScreen(),
             AdDetailsScreen.id: (context) => AdDetailsScreen(),
             AnnouncementScreen.id: (context) => AnnouncementScreen(),
             EditItemScreen.id: (context) => EditItemScreen(),
             CategoriesScreen.id: (context) => CategoriesScreen(),
-            MoreScreen.id: (context) => MoreScreen(),
             PersonalCareScreen.id: (context) => PersonalCareScreen(),
             ProfileScreen.id: (context) => ProfileScreen(),
             AddonsScreen.id: (context) => AddonsScreen(),
@@ -93,6 +99,17 @@ class MyMaterialApp extends StatelessWidget {
             RegistrationScreen.id: (context) => RegistrationScreen(),
             CongratulationsScreen.id: (context) => CongratulationsScreen(),
             NotificationsScreen.id: (context) => NotificationsScreen(),
+            ConfirmedOrderDetailsScreen.id:
+                (context) => ConfirmedOrderDetailsScreen(),
+            PendingOrderDetailsScreen.id:
+                (context) => PendingOrderDetailsScreen(),
+            CookingOrderDetailsScreen.id:
+                (context) => CookingOrderDetailsScreen(),
+            HandoverOrderDetailsScreen.id:
+                (context) => HandoverOrderDetailsScreen(),
+            OnWayOrderDetailsScreen.id: (context) => OnWayOrderDetailsScreen(),
+            DeliveredOrderDetailsScreen.id:
+                (context) => DeliveredOrderDetailsScreen(),
           },
         );
       },

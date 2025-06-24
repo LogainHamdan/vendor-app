@@ -1,5 +1,7 @@
 import 'package:burger_home/screens/home%20&%20wallet/home/home-screen.dart';
+import 'package:burger_home/screens/home%20&%20wallet/orders/orders.dart';
 import 'package:burger_home/screens/main/ui/screens/provider.dart';
+import 'package:burger_home/screens/more%20&%20store%20management/more/more.dart';
 import 'package:burger_home/screens/store-home/burger-home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +10,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../constants/constants.dart';
+import '../../../home & wallet/wallet/wallet.dart';
 
 class MainScreen extends StatelessWidget {
   static const id = '/';
@@ -25,10 +28,10 @@ class MainScreen extends StatelessWidget {
   ];
   final List<Widget> screens = const [
     HomeScreen(),
+    OrdersScreen(),
+    WalletScreen(),
     StoreHomePage(),
-    StoreHomePage(),
-    StoreHomePage(),
-    StoreHomePage(),
+    MoreScreen(),
   ];
 
   final List<String> labels = const [
