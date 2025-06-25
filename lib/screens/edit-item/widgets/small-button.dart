@@ -1,3 +1,4 @@
+import 'package:burger_home/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,6 +10,7 @@ class CustomSmallButton extends StatelessWidget {
   final Function() onPressed;
   final double? height;
   final double? width;
+  final bool? isOutlined;
 
   const CustomSmallButton({
     super.key,
@@ -17,18 +19,23 @@ class CustomSmallButton extends StatelessWidget {
     required this.backgroundColor,
     required this.onPressed,
     this.height = 42,
-    this.width = 148,
+    this.width,
+    this.isOutlined = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: height?.h,
-      width: width?.w,
+      width: width,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor,
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+          side:
+              isOutlined!
+                  ? BorderSide(color: blackColor, width: 1.w)
+                  : BorderSide.none,
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12.r),
           ),
@@ -36,7 +43,7 @@ class CustomSmallButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           title,
-          style: GoogleFonts.poppins(
+          style: GoogleFonts.notoSans(
             textStyle: TextStyle(
               color: textColor,
               fontSize: 16.sp,

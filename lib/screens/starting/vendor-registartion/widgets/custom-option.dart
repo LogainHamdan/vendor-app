@@ -21,45 +21,41 @@ class CustomOption extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: GestureDetector(
-        onTap: onTap,
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: 12.h),
-          decoration: BoxDecoration(
-            color: Colors.transparent,
-            border: Border.all(
-              color: isSelected ? blueColor : containerBorderLight,
-              width: 1.w,
-            ),
-            borderRadius: BorderRadius.circular(10.r),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 12.h),
+        decoration: BoxDecoration(
+          color: Colors.transparent,
+          border: Border.all(
+            color: isSelected ? blueColor : containerBorderLight,
+            width: 1.w,
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              SizedBox(width: 16.w),
-              Icon(
-                isSelected
-                    ? Icons.radio_button_checked
-                    : Icons.radio_button_off,
-                color: isSelected ? blueColor : titleColor,
-                size: 20.sp,
-              ),
-              SizedBox(width: 16.w),
-              if (icon != null) ...[icon!, SizedBox(width: 8.w)],
-              SizedBox(
-                width: 96.w,
-                child: Text(
-                  title,
-                  style: TextStyle(
-                    color: blackColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14.sp,
-                  ),
+          borderRadius: BorderRadius.circular(10.r),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(width: 16.w),
+            Icon(
+              isSelected ? Icons.radio_button_checked : Icons.radio_button_off,
+              color: isSelected ? blueColor : titleColor,
+              size: 20.sp,
+            ),
+            SizedBox(width: 16.w),
+            if (icon != null) ...[icon!, SizedBox(width: 8.w)],
+            SizedBox(
+              width: 120.w,
+              child: Text(
+                title,
+                style: TextStyle(
+                  color: blackColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14.sp,
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

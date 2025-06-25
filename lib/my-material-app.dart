@@ -1,6 +1,14 @@
 import 'package:burger_home/constants/constants.dart';
 import 'package:burger_home/screens/ad-details/ad-details.dart';
 import 'package:burger_home/screens/announcement/announcement.dart';
+import 'package:burger_home/screens/business,%20expenses/change-pass/change-pass.dart';
+import 'package:burger_home/screens/business,%20expenses/change-plan/change-plan.dart';
+import 'package:burger_home/screens/business,%20expenses/expense-report/expense-report.dart';
+import 'package:burger_home/screens/business,%20expenses/help,%20support/help,%20support.dart';
+import 'package:burger_home/screens/business,%20expenses/help,%20support/terms-conditions/terms-conditions.dart';
+import 'package:burger_home/screens/business,%20expenses/my-business-plan/my-business-plan.dart';
+import 'package:burger_home/screens/business,%20expenses/privacy-policy/privacy-policy.dart';
+import 'package:burger_home/screens/business,%20expenses/shift-in-this-plan/shift-in-this-plan.dart';
 import 'package:burger_home/screens/edit-item/edit-item.dart';
 import 'package:burger_home/screens/home%20&%20wallet/confirmed-order-details/confirmed-order-details.dart';
 import 'package:burger_home/screens/home%20&%20wallet/cooking-order-details/cooking-order-details.dart';
@@ -110,6 +118,14 @@ class MyMaterialApp extends StatelessWidget {
             OnWayOrderDetailsScreen.id: (context) => OnWayOrderDetailsScreen(),
             DeliveredOrderDetailsScreen.id:
                 (context) => DeliveredOrderDetailsScreen(),
+            MyBusinessPlanScreen.id: (context) => MyBusinessPlanScreen(),
+            ChangePlanScreen.id: (context) => ChangePlanScreen(),
+            ShiftInThisPlan.id: (context) => ShiftInThisPlan(),
+            ExpenseReportScreen.id: (context) => ExpenseReportScreen(),
+            ChangePassScreen.id: (context) => ChangePassScreen(),
+            HelpAndSupportScreen.id: (context) => HelpAndSupportScreen(),
+            PrivacyPolicyScreen.id: (context) => PrivacyPolicyScreen(),
+            TermsConditionsScreen.id: (context) => TermsConditionsScreen(),
           },
         );
       },

@@ -22,22 +22,26 @@ class PlanDetails extends StatelessWidget {
           children: [
             Row(
               children: [
-                CustomOption(
-                  title: "Commission Base",
-                  isSelected: !provider.isSubscriptionBase,
-                  onTap:
-                      () => provider.toggleCommissionType(
-                        !provider.isSubscriptionBase,
-                      ),
+                Expanded(
+                  child: CustomOption(
+                    title: "Commission Base",
+                    isSelected: !provider.isSubscriptionBase,
+                    onTap:
+                        () => provider.toggleCommissionType(
+                          !provider.isSubscriptionBase,
+                        ),
+                  ),
                 ),
                 SizedBox(width: 16.w),
-                CustomOption(
-                  title: "Subscription Base",
-                  isSelected: provider.isSubscriptionBase,
-                  onTap:
-                      () => provider.toggleCommissionType(
-                        !provider.isSubscriptionBase,
-                      ),
+                Expanded(
+                  child: CustomOption(
+                    title: "Subscription Base",
+                    isSelected: provider.isSubscriptionBase,
+                    onTap:
+                        () => provider.toggleCommissionType(
+                          !provider.isSubscriptionBase,
+                        ),
+                  ),
                 ),
               ],
             ),
@@ -60,7 +64,7 @@ class PlanDetails extends StatelessWidget {
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   itemBuilder:
-                      (context, index) => SvgPicture.asset(subscriptionImage),
+                      (context, index) => SvgPicture.asset(businessPlanImg2),
                   separatorBuilder: (context, index) => SizedBox(width: 16.w),
                   itemCount: 3,
                 ),

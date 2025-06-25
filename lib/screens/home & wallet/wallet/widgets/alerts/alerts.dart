@@ -28,7 +28,7 @@ Future<void> showPayTypeAlert(BuildContext context) async {
             clipBehavior: Clip.none,
             children: [
               SizedBox(
-                height: 200.h,
+                height: 255.h,
                 child: Material(
                   color: Colors.white,
                   borderRadius: BorderRadius.vertical(
@@ -47,16 +47,58 @@ Future<void> showPayTypeAlert(BuildContext context) async {
                           child: HeaderTitle(title: 'Choose Type'),
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Column(
                               children: [
-                                Column(
-                                  children: [
-                                    DottedBorder(
+                                SizedBox(
+                                  width: 150.w,
+                                  height: 112.h,
+                                  child: DottedBorder(
+                                    options: RoundedRectDottedBorderOptions(
+                                      dashPattern: [4, 4],
+                                      strokeWidth: 1.5,
+                                      color: containerBorderLight,
+                                      radius: Radius.circular(16.r),
+                                      padding: EdgeInsets.all(16.w),
+                                    ),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(16.r),
+                                      child: Center(
+                                        // ✅ Center the image
+                                        child: Image.asset(
+                                          withdrawImage,
+                                          height: 66.h,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 8.h),
+                                Text(
+                                  'Withdraw',
+                                  style: TextStyle(
+                                    color: titleColor,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14.sp,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              width: 8.w,
+                            ), // ✅ Exact spacing between them
+                            Column(
+                              children: [
+                                GestureDetector(
+                                  onTap: () => showBankTransferAlert(context),
+                                  child: SizedBox(
+                                    width: 150.w,
+                                    height: 112.h,
+                                    child: DottedBorder(
                                       options: RoundedRectDottedBorderOptions(
                                         dashPattern: [4, 4],
-                                        strokeWidth: 1,
+                                        strokeWidth: 1.5,
                                         color: containerBorderLight,
                                         radius: Radius.circular(16.r),
                                         padding: EdgeInsets.all(16.w),
@@ -65,43 +107,13 @@ Future<void> showPayTypeAlert(BuildContext context) async {
                                         borderRadius: BorderRadius.circular(
                                           16.r,
                                         ),
-                                        child: Image.asset(
-                                          withdrawImage,
-                                          height: 66.h,
+                                        child: Center(
+                                          // ✅ Center the image
+                                          child: Image.asset(
+                                            payImage,
+                                            height: 66.h,
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                    SizedBox(height: 8.h),
-                                    Text(
-                                      'Withdraw',
-                                      style: TextStyle(
-                                        color: titleColor,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14.sp,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            SizedBox(width: 16.w),
-                            Column(
-                              children: [
-                                GestureDetector(
-                                  onTap: () => showBankTransferAlert(context),
-                                  child: DottedBorder(
-                                    options: RoundedRectDottedBorderOptions(
-                                      dashPattern: [4, 4],
-                                      strokeWidth: 1,
-                                      color: containerBorderLight,
-                                      radius: Radius.circular(16.r),
-                                      padding: EdgeInsets.all(8.w),
-                                    ),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(16.r),
-                                      child: Image.asset(
-                                        payImage,
-                                        height: 66.h,
                                       ),
                                     ),
                                   ),
@@ -155,7 +167,7 @@ Future<void> showBankTransferAlert(BuildContext context) async {
             clipBehavior: Clip.none,
             children: [
               SizedBox(
-                height: 500.h,
+                height: 520.h,
                 child: Material(
                   color: Colors.white,
                   borderRadius: BorderRadius.vertical(
@@ -251,32 +263,36 @@ Future<void> showPayingMethodAlert(BuildContext context) async {
                             children: [
                               HeaderTitle(title: 'Choose Method'),
                               SizedBox(height: 16.h),
-                              CustomOption(
-                                icon: SvgPicture.asset(
-                                  paypalIcon,
-                                  height: 20.h,
-                                  width: 20.w,
+                              Expanded(
+                                child: CustomOption(
+                                  icon: SvgPicture.asset(
+                                    paypalIcon,
+                                    height: 20.h,
+                                    width: 20.w,
+                                  ),
+                                  title: 'Paypal',
+                                  isSelected: provider.isPaypal,
+                                  onTap:
+                                      () => provider.togglePayingType(
+                                        !provider.isPaypal,
+                                      ),
                                 ),
-                                title: 'Paypal',
-                                isSelected: provider.isPaypal,
-                                onTap:
-                                    () => provider.togglePayingType(
-                                      !provider.isPaypal,
-                                    ),
                               ),
                               SizedBox(height: 12.h),
 
-                              CustomOption(
-                                icon: SvgPicture.asset(
-                                  instaPayIcon,
-                                  width: 20.w,
+                              Expanded(
+                                child: CustomOption(
+                                  icon: SvgPicture.asset(
+                                    instaPayIcon,
+                                    width: 20.w,
+                                  ),
+                                  title: 'Instapay',
+                                  isSelected: !provider.isPaypal,
+                                  onTap:
+                                      () => provider.togglePayingType(
+                                        !provider.isPaypal,
+                                      ),
                                 ),
-                                title: 'Instapay',
-                                isSelected: !provider.isPaypal,
-                                onTap:
-                                    () => provider.togglePayingType(
-                                      !provider.isPaypal,
-                                    ),
                               ),
                               SizedBox(height: 12.h),
                               CustomElevatedButton(

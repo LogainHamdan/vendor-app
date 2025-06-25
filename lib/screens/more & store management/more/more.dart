@@ -7,15 +7,17 @@ import 'package:burger_home/screens/more%20&%20store%20management/more/widgets/s
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 import '../../edit-item/widgets/draggable-button.dart';
-import 'data.dart';
+import 'provider.dart';
 
 class MoreScreen extends StatelessWidget {
   const MoreScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<MoreScreenProvider>(context, listen: false);
     return Scaffold(
       appBar: CustomAppBar(title: 'More'),
       body: SafeArea(
@@ -58,22 +60,22 @@ class MoreScreen extends StatelessWidget {
                 CustomTitle(title: 'Store Management'),
                 SizedBox(height: 16.h),
 
-                OptionsContainer(items: storeManagementItems),
+                OptionsContainer(items: provider.storeManagementItems(context)),
                 SizedBox(height: 16.h),
 
                 CustomTitle(title: 'Marketing Ads'),
                 SizedBox(height: 16.h),
-                OptionsContainer(items: marketingAdsItems),
+                OptionsContainer(items: provider.marketingAdsItems(context)),
                 SizedBox(height: 16.h),
 
                 CustomTitle(title: 'Business & Reports'),
                 SizedBox(height: 16.h),
-                OptionsContainer(items: businessReportsItems),
+                OptionsContainer(items: provider.businessReportsItems(context)),
                 SizedBox(height: 16.h),
 
                 CustomTitle(title: 'Help & Settings'),
                 SizedBox(height: 16.h),
-                OptionsContainer(items: settingsItems),
+                OptionsContainer(items: provider.settingsItems(context)),
                 SizedBox(height: 16.h),
                 OptionsContainer(
                   noArrow: true,

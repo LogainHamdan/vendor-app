@@ -26,6 +26,7 @@ Color greenBgColor = Color(0xFFF8FFF7);
 Color confirmedColor = Color(0xFF008080);
 Color cardBgColor = Color(0x750F220D);
 Color deepGreenColor = Color(0xFF046333);
+Color dividerColor = Color(0x33FFFFFF);
 
 ///img paths
 
@@ -63,11 +64,37 @@ String warningIcon = 'assets/home/img_1.png';
 String timerImage = 'assets/home/img_2.png';
 String tickImage = 'assets/home/Vector.svg';
 String paymentImage = 'assets/home/img_3.png';
-String withdrawImage = 'assets/home/img_4.png';
-String payImage = 'assets/home/img_5.png';
+String withdrawImage = 'assets/home/9816278 1.png';
+String payImage = 'assets/home/16609 2.png';
 String instaPayIcon = 'assets/home/Layer_1-2.svg';
 String paypalIcon = 'assets/home/logos_paypal.svg';
+String ukFlag = 'assets/business, expenses/circle-flags_uk.svg';
+String palestineFlag =
+    'assets/business, expenses/emojione_flag-for-palestinian-territories.svg';
+String spainFlag = 'assets/business, expenses/img.png';
+String bangladeshFlag = 'assets/business, expenses/img_1.png';
+String policiesImg = 'assets/business, expenses/envelop_11946342 2.png';
+String helpAndSupportImg =
+    'assets/business, expenses/6f4222ff-24a5-44ca-bae5-cb863fe18545 1.png';
+String locationImg = 'assets/business, expenses/10817176_19406483 1.png';
+String headphonesImg =
+    'assets/business, expenses/[freepicdownloader.com]-3d-call-center-icon-vector-illustration-normal 1.png';
+String whatsAppImg =
+    'assets/business, expenses/[freepicdownloader.com]-whatsapp-icon-design-normal 1.png';
+String callImg = 'assets/business, expenses/Objects.png';
+String messageImg =
+    'assets/business, expenses/yellow-envelope-with-red-circle-notification-3d-illustration-cartoon-drawing-business-e-mail-letter-3d-style-white-background-business-communication-mail-concept 1.png';
 
+//business
+
+String businessPlanImg1 = 'assets/business, expenses/Frame 2147226174 (1).svg';
+String businessPlanImg2 = 'assets/business, expenses/Frame 2147226174 (2).svg';
+String refreshImg = 'assets/business, expenses/image 196.png';
+String debitCardImg = 'assets/business, expenses/Frame 2147225619.png';
+String jawwalPayImg = 'assets/business, expenses/image 135.png';
+String palpayImg = 'assets/business, expenses/image 136.png';
+String BOPImg = 'assets/business, expenses/image 156.png';
+String passChangedIcon = 'assets/business, expenses/Empty Status.svg';
 //store
 String burgerCover = 'assets/7003462f4a36ee053da12be160e7c9f4.png';
 String soundIcon = 'assets/img_2.png';

@@ -111,7 +111,7 @@ class StoreHomePage extends StatelessWidget {
                       ],
                     ),
                   ),
-
+                  SizedBox(height: 16.h),
                   tabProvider.showItems
                       ? ItemsSection()
                       : Padding(
