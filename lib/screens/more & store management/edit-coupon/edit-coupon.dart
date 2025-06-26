@@ -1,25 +1,25 @@
-import 'package:burger_home/constants/constants.dart';
-import 'package:burger_home/screens/ad-details/widgets/custom-app-bar.dart';
-import 'package:burger_home/screens/ad-details/widgets/custom-text-field.dart';
-import 'package:burger_home/screens/edit-item/widgets/custom-parent-container.dart';
-import 'package:burger_home/screens/edit-item/widgets/draggable-button.dart';
-import 'package:burger_home/screens/more%20&%20store%20management/coupon-more-2/provider.dart';
-import 'package:burger_home/screens/more%20&%20store%20management/coupon-more-2/widgets/alerts/alerts.dart';
-import 'package:burger_home/screens/more%20&%20store%20management/coupon-more-2/widgets/aligned-fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
-class CouponMore2Screen extends StatelessWidget {
-  static const id = '/coupon-more-2';
+import '../../../constants/constants.dart';
+import '../../ad-details/widgets/custom-app-bar.dart';
+import '../../ad-details/widgets/custom-text-field.dart';
+import '../../edit-item/widgets/custom-parent-container.dart';
+import '../../edit-item/widgets/draggable-button.dart';
+import '../coupon-more-2/provider.dart';
+import '../coupon-more-2/widgets/alerts/alerts.dart';
+import '../coupon-more-2/widgets/aligned-fields.dart';
 
-  const CouponMore2Screen({super.key});
+class EditCouponScreen extends StatelessWidget {
+  static const id = 'edit-coupon';
+  const EditCouponScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'Coupon'),
+      appBar: CustomAppBar(title: 'Edit Coupon'),
       body: SafeArea(
         child: SingleChildScrollView(
           child: CustomParentContainer(

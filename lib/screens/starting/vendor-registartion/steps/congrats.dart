@@ -2,6 +2,7 @@ import 'package:burger_home/constants/constants.dart';
 import 'package:burger_home/screens/ad-details/widgets/custom-app-bar.dart';
 import 'package:burger_home/screens/announcement/widgets/custom-elevated-button.dart';
 import 'package:burger_home/screens/edit-item/widgets/custom-parent-container.dart';
+import 'package:burger_home/screens/starting/sign-in/sign-in.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -42,7 +43,8 @@ class CongratulationsScreen extends StatelessWidget {
           SizedBox(height: 32.h),
           CustomElevatedButton(
             text: 'Back to Login',
-            onPressed: () {},
+            onPressed:
+                () => Navigator.pushReplacementNamed(context, SignInScreen.id),
             outlined: true,
             color: Colors.white,
           ),

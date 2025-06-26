@@ -36,7 +36,7 @@ class EditItemScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Expanded(
-                          child: Consumer<AddItemProvider>(
+                          child: Consumer<EditItemProvider>(
                             builder: (context, provider, child) {
                               return TabButton(
                                 label: "العربية",
@@ -54,7 +54,7 @@ class EditItemScreen extends StatelessWidget {
                         ),
                         SizedBox(width: 10.w),
                         Expanded(
-                          child: Consumer<AddItemProvider>(
+                          child: Consumer<EditItemProvider>(
                             builder: (context, provider, child) {
                               return TabButton(
                                 label: "English",
@@ -77,7 +77,7 @@ class EditItemScreen extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: Consumer<AddItemProvider>(
+              child: Consumer<EditItemProvider>(
                 builder: (context, provider, child) {
                   return provider.showArabic
                       ? ArabicSection()

@@ -5,8 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../constants/constants.dart';
 import '../../../ad-details/widgets/custom-title.dart';
-import '../../ad-details/widgets/AdDetailsCard.dart';
-import '../../ad-details/widgets/ad-details-row.dart';
+import '../../add-item/widgets/ad-details-row.dart';
+import '../../edit-coupon/edit-coupon.dart';
 
 class CustomCouponCard extends StatelessWidget {
   final String title;
@@ -57,7 +57,15 @@ class CustomCouponCard extends StatelessWidget {
               ),
               Row(
                 children: [
-                  SvgPicture.asset(editCircleIcon, height: 20.h, width: 20.w),
+                  GestureDetector(
+                    child: SvgPicture.asset(
+                      editCircleIcon,
+                      height: 20.h,
+                      width: 20.w,
+                    ),
+                    onTap:
+                        () => Navigator.pushNamed(context, EditCouponScreen.id),
+                  ),
                   SizedBox(width: 16.w),
                   GestureDetector(
                     onTap:

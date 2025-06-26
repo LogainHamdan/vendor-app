@@ -1,6 +1,7 @@
 import 'package:burger_home/constants/constants.dart';
 import 'package:burger_home/screens/ad-details/widgets/custom-text-field.dart';
 import 'package:burger_home/screens/announcement/widgets/custom-elevated-button.dart';
+import 'package:burger_home/screens/main/ui/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -58,7 +59,7 @@ class ForgotPassScreen extends StatelessWidget {
                 SizedBox(height: 32.h),
                 CustomElevatedButton(
                   text: 'Confirm',
-                  onPressed: () {},
+                  onPressed: () => Navigator.pushNamed(context, MainScreen.id),
                   color: burgundyColor,
                 ),
               ],

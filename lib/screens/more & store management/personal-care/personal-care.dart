@@ -4,10 +4,10 @@ import 'package:burger_home/screens/store-home/widgets/items-grid-view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class PersonalCareScreen extends StatelessWidget {
+class CategoryProductsScreen extends StatelessWidget {
   static const id = '/care';
 
-  const PersonalCareScreen({super.key});
+  const CategoryProductsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

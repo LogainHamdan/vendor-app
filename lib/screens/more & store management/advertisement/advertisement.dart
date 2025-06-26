@@ -11,6 +11,7 @@ import 'package:provider/provider.dart';
 
 import '../../../constants/constants.dart';
 import '../../store-home/widgets/tab-button.dart';
+import '../add-item/add-item.dart';
 
 class AdvertisementScreen extends StatelessWidget {
   static const id = '/ads';
@@ -24,7 +25,7 @@ class AdvertisementScreen extends StatelessWidget {
       appBar: CustomAppBar(title: 'Advertisement'),
       bottomNavigationBar: DraggableButton(
         title: 'Add New Ad',
-        onPressed: () {},
+        onPressed: () => Navigator.pushNamed(context, AdDetailsScreen.id),
       ),
     );
   }

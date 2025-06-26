@@ -20,7 +20,7 @@ class CustomCheckbox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isChecked = context.watch<AddItemProvider>().isChecked(providerKey);
+    final isChecked = context.watch<EditItemProvider>().isChecked(providerKey);
 
     return Row(
       children: [
@@ -30,13 +30,13 @@ class CustomCheckbox extends StatelessWidget {
 
           borderColor: titleColor,
           checkedFillColor: blueColor,
-          borderRadius: 6.r,
+          borderRadius: 4.r,
           borderWidth: 2.w,
-          checkBoxSize: 20.w,
+          checkBoxSize: 14.w,
           splashColor: Colors.transparent,
           checkedIcon: CupertinoIcons.checkmark_alt,
           onChanged: (val) {
-            context.read<AddItemProvider>().toggleCheck(providerKey);
+            context.read<EditItemProvider>().toggleCheck(providerKey);
           },
         ),
         Text(

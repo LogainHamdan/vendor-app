@@ -1,4 +1,5 @@
 import 'package:burger_home/screens/ad-details/widgets/custom-title.dart';
+import 'package:burger_home/screens/home%20&%20wallet/on-way-order-details/on-way-order-details.dart';
 import 'package:burger_home/screens/home%20&%20wallet/orders/widgets/order-card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -92,10 +93,17 @@ class OrdersSection extends StatelessWidget {
                 separatorBuilder: (context, index) => SizedBox(height: 16.h),
                 itemBuilder: (context, index) {
                   final ad = provider.orderList[index];
-                  return OrderCard(
-                    orderId: ad["id"]!,
-                    placedDate: ad["placedDate"]!,
-                    onTap: () {},
+                  return GestureDetector(
+                    onTap:
+                        () => Navigator.pushNamed(
+                          context,
+                          OnWayOrderDetailsScreen.id,
+                        ),
+                    child: OrderCard(
+                      orderId: ad["id"]!,
+                      placedDate: ad["placedDate"]!,
+                      onTap: () {},
+                    ),
                   );
                 },
               ),

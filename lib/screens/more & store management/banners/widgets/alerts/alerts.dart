@@ -90,11 +90,56 @@ void showNewBannerAlert(BuildContext context) async {
                           label: 'Redirection URl / Link',
                         ),
                         SizedBox(height: 16.h),
-                        SvgPicture.asset(
-                          uploadBannerContainer,
-                          height: 112.h,
-                          width: double.infinity,
+                        Consumer<BannersProvider>(
+                          builder: (context, provider, child) {
+                            return GestureDetector(
+                              onTap: provider.pickImage,
+                              child:
+                                  provider.selectedBanner != null
+                                      ? Stack(
+                                        children: [
+                                          ClipRRect(
+                                            borderRadius: BorderRadius.circular(
+                                              12,
+                                            ),
+                                            child: Image.file(
+                                              provider.selectedBanner!,
+                                              height: 112.h,
+                                              width: double.infinity,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                          Positioned(
+                                            top: 8,
+                                            right: 8,
+                                            child: GestureDetector(
+                                              onTap: provider.removeBanner,
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  color: Colors.black
+                                                      .withOpacity(0.5),
+                                                  shape: BoxShape.circle,
+                                                ),
+                                                padding: EdgeInsets.all(4),
+                                                child: Icon(
+                                                  Icons.close,
+                                                  size: 16,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                      : SvgPicture.asset(
+                                        uploadBannerContainer,
+                                        height: 112.h,
+                                        width: double.infinity,
+                                      ),
+                            );
+                          },
                         ),
+
                         SizedBox(height: 16.h),
                         CustomElevatedButton(
                           text: 'Add',

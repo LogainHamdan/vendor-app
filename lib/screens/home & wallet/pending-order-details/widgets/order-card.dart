@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../constants/constants.dart';
-import '../../../more & store management/ad-details/widgets/ad-details-row.dart';
 import 'order-row.dart';
 
 class OrderCard extends StatelessWidget {

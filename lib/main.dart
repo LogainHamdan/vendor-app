@@ -30,8 +30,8 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (_) => BottomNavProvider()),
         ChangeNotifierProvider(create: (_) => BurgerHomeProvider()),
-        ChangeNotifierProvider(create: (_) => AdDetailsProvider()),
-        ChangeNotifierProvider(create: (_) => AddItemProvider()),
+        ChangeNotifierProvider(create: (_) => CreateAdProvider()),
+        ChangeNotifierProvider(create: (_) => EditItemProvider()),
         ChangeNotifierProvider(create: (_) => ChatProvider()),
         ChangeNotifierProvider(create: (_) => BannersProvider()),
         ChangeNotifierProvider(create: (_) => AdvertisementProvider()),

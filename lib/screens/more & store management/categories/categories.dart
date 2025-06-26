@@ -1,6 +1,7 @@
 import 'package:burger_home/screens/ad-details/widgets/custom-app-bar.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/categories/widgets/alerts/alerts.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/categories/widgets/category-container.dart';
+import 'package:burger_home/screens/more%20&%20store%20management/personal-care/personal-care.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -32,9 +33,13 @@ class CategoriesScreen extends StatelessWidget {
           ),
           itemBuilder: (context, index) {
             final category = categories[index];
-            return CategoryContainer(
-              image: category['img']!,
-              title: category['title']!,
+            return GestureDetector(
+              onTap:
+                  () => Navigator.pushNamed(context, CategoryProductsScreen.id),
+              child: CategoryContainer(
+                image: category['img']!,
+                title: category['title']!,
+              ),
             );
           },
         ),

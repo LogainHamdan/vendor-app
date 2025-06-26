@@ -1,6 +1,7 @@
 import 'package:burger_home/constants/constants.dart';
 import 'package:burger_home/screens/ad-details/widgets/custom-app-bar.dart';
 import 'package:burger_home/screens/announcement/widgets/custom-elevated-button.dart';
+import 'package:burger_home/screens/business,%20expenses/change-plan/change-plan.dart';
 import 'package:burger_home/screens/edit-item/widgets/custom-parent-container.dart';
 import 'package:burger_home/screens/edit-item/widgets/draggable-button.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,10 @@ class MyBusinessPlanScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: DraggableButton(title: 'Change Plan'),
+      bottomNavigationBar: DraggableButton(
+        title: 'Change Plan',
+        onPressed: () => Navigator.pushNamed(context, ChangePlanScreen.id),
+      ),
     );
   }
 }

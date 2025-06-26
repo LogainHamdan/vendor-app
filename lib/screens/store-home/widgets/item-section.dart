@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../constants/constants.dart';
+import '../../ad-details/ad-details.dart';
 import '../../more & store management/personal-care/data.dart';
 import 'items-grid-view.dart';
 
@@ -28,7 +29,7 @@ class ItemsSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: Row(
               children: [
                 Expanded(
@@ -38,21 +39,24 @@ class ItemsSection extends StatelessWidget {
                     controller: TextEditingController(),
                   ),
                 ),
-                const SizedBox(width: 16),
-                SvgPicture.asset(addContainer, height: 40, width: 40),
+                SizedBox(width: 16.w),
+                GestureDetector(
+                  onTap: () => Navigator.pushNamed(context, CreateAdScreen.id),
+                  child: SvgPicture.asset(addContainer, height: 40, width: 40),
+                ),
               ],
             ),
           ),
 
-          const SizedBox(height: 16),
+          SizedBox(height: 16.h),
 
           SizedBox(
             height: 70,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
-                separatorBuilder: (context, index) => const SizedBox(width: 10),
+                separatorBuilder: (context, index) => SizedBox(width: 10.w),
                 itemCount: categories.length,
                 itemBuilder:
                     (context, index) => CustomChip(

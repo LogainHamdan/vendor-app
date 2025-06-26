@@ -1,6 +1,7 @@
 import 'package:burger_home/constants/constants.dart';
 import 'package:burger_home/screens/ad-details/widgets/custom-app-bar.dart';
 import 'package:burger_home/screens/ad-details/widgets/custom-title.dart';
+import 'package:burger_home/screens/business,%20expenses/expense-report/expense-report.dart';
 import 'package:burger_home/screens/business,%20expenses/shift-in-this-plan/provider.dart';
 import 'package:burger_home/screens/business,%20expenses/shift-in-this-plan/widgets/plan-column.dart';
 import 'package:burger_home/screens/business,%20expenses/shift-in-this-plan/widgets/plan-details-container.dart';
@@ -12,16 +13,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
-class ShiftInThisPlan extends StatelessWidget {
+class ShiftInThisPlanScreen extends StatelessWidget {
   static const id = '/shift';
 
-  const ShiftInThisPlan({super.key});
+  const ShiftInThisPlanScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(title: 'My Business Plan'),
-      bottomNavigationBar: DraggableButton(title: 'Shift In This Plan'),
+      bottomNavigationBar: DraggableButton(
+        title: 'Shift In This Plan',
+        onPressed: () => Navigator.pushNamed(context, ExpenseReportScreen.id),
+      ),
       body: Consumer<ShiftInThisPlanProvider>(
         builder:
             (context, provider, child) => SafeArea(

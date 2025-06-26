@@ -6,6 +6,7 @@ import 'package:burger_home/screens/home%20&%20wallet/home/provider.dart';
 import 'package:burger_home/screens/home%20&%20wallet/home/widgets/checking-container.dart';
 import 'package:burger_home/screens/home%20&%20wallet/home/widgets/filled-container.dart';
 import 'package:burger_home/screens/home%20&%20wallet/home/widgets/sales-boost.dart';
+import 'package:burger_home/screens/home%20&%20wallet/notfications/notifications.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/advertisement/widgets/ads-section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -45,10 +46,13 @@ class HomeScreen extends StatelessWidget {
         actions: [
           Padding(
             padding: EdgeInsets.only(right: 16.w),
-            child: SvgPicture.asset(
-              notificationIcon,
-              height: 24.h,
-              width: 24.w,
+            child: GestureDetector(
+              onTap: () => Navigator.pushNamed(context, NotificationsScreen.id),
+              child: SvgPicture.asset(
+                notificationIcon,
+                height: 24.h,
+                width: 24.w,
+              ),
             ),
           ),
         ],

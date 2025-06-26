@@ -1,4 +1,5 @@
 import 'package:burger_home/screens/ad-details/widgets/custom-app-bar.dart';
+import 'package:burger_home/screens/business,%20expenses/shift-in-this-plan/shift-in-this-plan.dart';
 import 'package:burger_home/screens/edit-item/widgets/custom-parent-container.dart';
 import 'package:burger_home/screens/edit-item/widgets/draggable-button.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,10 @@ class ChangePlanScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(title: 'Change Plan'),
-      bottomNavigationBar: DraggableButton(title: 'Shift In This Plan'),
+      bottomNavigationBar: DraggableButton(
+        title: 'Shift In This Plan',
+        onPressed: () => Navigator.pushNamed(context, ShiftInThisPlanScreen.id),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: CustomParentContainer(

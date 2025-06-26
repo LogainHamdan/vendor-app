@@ -1,6 +1,9 @@
-import 'package:flutter/material.dart';
+import 'dart:io';
 
-class AddItemProvider with ChangeNotifier {
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+
+class EditItemProvider with ChangeNotifier {
   bool showArabic = false;
 
   final TextEditingController nameController = TextEditingController();
@@ -17,6 +20,24 @@ class AddItemProvider with ChangeNotifier {
   bool _isExpanded = false;
 
   bool get isExpanded => _isExpanded;
+  final List<File> _images = [];
+
+  List<File> get images => _images;
+
+  Future<void> pickImage() async {
+    final picker = ImagePicker();
+    final picked = await picker.pickImage(source: ImageSource.gallery);
+    if (picked != null) {
+      _images.add(File(picked.path));
+      notifyListeners();
+    }
+  }
+
+  void removeImage(File image) {
+    _images.remove(image);
+    notifyListeners();
+  }
+
   void toggleCheck(String key) {
     _checkboxStates[key] = !isChecked(key);
     notifyListeners();

@@ -1,4 +1,10 @@
 import 'package:burger_home/constants/constants.dart';
+import 'package:burger_home/screens/starting/sign-in/sign-in.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'dart:async';
+import 'package:burger_home/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -8,8 +14,18 @@ class SplashScreen extends StatelessWidget {
 
   const SplashScreen({super.key});
 
+  void _navigateAfterDelay(BuildContext context) {
+    Future.delayed(const Duration(seconds: 5), () {
+      Navigator.pushReplacementNamed(context, SignInScreen.id);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _navigateAfterDelay(context);
+    });
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
@@ -22,11 +38,7 @@ class SplashScreen extends StatelessWidget {
             Stack(
               children: [
                 SvgPicture.asset(vendorAppTitle, height: 49.h),
-                Positioned(
-                  top: 0,
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
+                Positioned.fill(
                   child: Center(
                     child: Text(
                       'Vendor',

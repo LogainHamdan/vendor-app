@@ -1,11 +1,13 @@
 import 'package:burger_home/screens/ad-details/widgets/custom-title.dart';
 import 'package:burger_home/screens/home%20&%20wallet/orders/widgets/order-card.dart';
+import 'package:burger_home/screens/more%20&%20store%20management/ad-details-more-2/ad-details-more-2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../constants/constants.dart';
 import '../../../store-home/widgets/tab-button.dart';
+import '../../add-item/add-item.dart';
 import '../../categories/widgets/header-title.dart';
 import '../provider.dart';
 import 'ad-card.dart';
@@ -65,7 +67,7 @@ class AdsSection extends StatelessWidget {
                     type: ad["type"]!,
                     placedDate: ad["placedDate"]!,
                     duration: ad["duration"]!,
-                    onTap: () {},
+                    onTap: () => Navigator.pushNamed(context, AdDetailsScreen.id),
                   );
                 },
               ),

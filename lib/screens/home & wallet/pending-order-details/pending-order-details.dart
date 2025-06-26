@@ -2,12 +2,14 @@ import 'package:burger_home/constants/constants.dart';
 import 'package:burger_home/screens/ad-details/widgets/custom-app-bar.dart';
 import 'package:burger_home/screens/edit-item/widgets/custom-parent-container.dart';
 import 'package:burger_home/screens/edit-item/widgets/draggable-button.dart';
+import 'package:burger_home/screens/home%20&%20wallet/orders/orders.dart';
 import 'package:burger_home/screens/home%20&%20wallet/pending-order-details/widgets/additional-note.dart';
 import 'package:burger_home/screens/home%20&%20wallet/pending-order-details/widgets/alerts/alerts.dart';
 import 'package:burger_home/screens/home%20&%20wallet/pending-order-details/widgets/customer-card.dart';
 import 'package:burger_home/screens/home%20&%20wallet/pending-order-details/widgets/order-card.dart';
 import 'package:burger_home/screens/home%20&%20wallet/pending-order-details/widgets/order-items-container.dart';
 import 'package:burger_home/screens/home%20&%20wallet/pending-order-details/widgets/payment-card.dart';
+import 'package:burger_home/screens/main/ui/screens/main_screen.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/coupon-more-2/widgets/confirm-cancel-button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -64,7 +66,7 @@ class PendingOrderDetailsScreen extends StatelessWidget {
       ),
       bottomNavigationBar: DraggableButton(
         upperWidget: ConfirmCancelButton(
-          onCancelPressed: () {},
+          onCancelPressed: () => Navigator.pushNamed(context, MainScreen.id),
           onPressed: () => showConfirmOrderAlert(context),
         ),
         title: 'Print Invoice',

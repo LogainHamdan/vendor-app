@@ -65,10 +65,7 @@ class CookingOrderDetailsScreen extends StatelessWidget {
         upperWidget: FadedButton(
           title: 'Handover',
           onPressed:
-              () => Navigator.pushReplacementNamed(
-                context,
-                HandoverOrderDetailsScreen.id,
-              ),
+              () => Navigator.pushNamed(context, HandoverOrderDetailsScreen.id),
         ),
         title: 'Print Invoice',
         icon: SvgPicture.asset(printerIcon, height: 24.h, width: 24.w),

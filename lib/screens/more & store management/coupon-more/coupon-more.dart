@@ -1,12 +1,13 @@
 import 'package:burger_home/screens/ad-details/widgets/custom-app-bar.dart';
 import 'package:burger_home/screens/edit-item/widgets/custom-parent-container.dart';
+import 'package:burger_home/screens/edit-item/widgets/draggable-button.dart';
+import 'package:burger_home/screens/more%20&%20store%20management/coupon-more-2/coupon-more-2.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/coupon-more/widgets/coupon-card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../constants/constants.dart';
-import '../ad-details/widgets/AdDetailsCard.dart';
 
 class CouponMoreScreen extends StatelessWidget {
   static const id = '/coupon-more';
@@ -65,6 +66,10 @@ class CouponMoreScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: DraggableButton(
+        title: 'Add New Coupon',
+        onPressed: () => Navigator.pushNamed(context, CouponMore2Screen.id),
       ),
     );
   }

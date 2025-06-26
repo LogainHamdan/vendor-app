@@ -77,8 +77,6 @@ void showConfirmOrderAlert(BuildContext context) {
 }
 
 void showOrderCancellationDialog(BuildContext context) {
-  String selectedReason = 'Product Shortage';
-
   showModalBottomSheet(
     context: context,
     backgroundColor: Colors.transparent,
@@ -146,7 +144,7 @@ void showOrderCancellationDialog(BuildContext context) {
 
                         ConfirmCancelButton(
                           onPressed:
-                              () => Navigator.pushReplacementNamed(
+                              () => Navigator.pushNamed(
                                 context,
                                 ConfirmedOrderDetailsScreen.id,
                               ),

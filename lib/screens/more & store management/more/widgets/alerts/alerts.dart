@@ -49,7 +49,10 @@ Future<void> showPassChangedAlert(BuildContext context) async {
                         ),
                       ),
                       SizedBox(height: 24.h),
-                      DraggableButton(title: 'Go Back'),
+                      DraggableButton(
+                        title: 'Go Back',
+                        onPressed: () => Navigator.pop(context),
+                      ),
                     ],
                   ),
                 ),

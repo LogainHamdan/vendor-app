@@ -4,6 +4,7 @@ import 'package:burger_home/screens/ad-details/widgets/custom-title.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/more/widgets/info-row.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/more/widgets/options-container.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/more/widgets/small-container.dart';
+import 'package:burger_home/screens/more%20&%20store%20management/profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -51,7 +52,17 @@ class MoreScreen extends StatelessWidget {
                           name: 'Mohammed Salem',
                           number: '+91231515548',
                         ),
-                        SmallContainer(color: containerColor, title: 'Details'),
+                        GestureDetector(
+                          child: SmallContainer(
+                            color: containerColor,
+                            title: 'Details',
+                          ),
+                          onTap:
+                              () => Navigator.pushNamed(
+                                context,
+                                ProfileScreen.id,
+                              ),
+                        ),
                       ],
                     ),
                   ),

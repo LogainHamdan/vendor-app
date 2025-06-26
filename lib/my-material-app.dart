@@ -21,7 +21,7 @@ import 'package:burger_home/screens/home%20&%20wallet/orders/orders.dart';
 import 'package:burger_home/screens/home%20&%20wallet/pending-order-details/pending-order-details.dart';
 import 'package:burger_home/screens/main/ui/screens/main_screen.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/ad-details-more-2/ad-details-more-2.dart';
-import 'package:burger_home/screens/more%20&%20store%20management/ad-details/ad-details.dart';
+import 'package:burger_home/screens/more%20&%20store%20management/add-item/add-item.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/addons/addons.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/advertisement/advertisement.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/banners/banners.dart';
@@ -29,6 +29,7 @@ import 'package:burger_home/screens/more%20&%20store%20management/categories/cat
 import 'package:burger_home/screens/more%20&%20store%20management/conversations/conversations.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/coupon-more-2/coupon-more-2.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/coupon-more/coupon-more.dart';
+import 'package:burger_home/screens/more%20&%20store%20management/edit-coupon/edit-coupon.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/live-chat/live-chat.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/low-stock/low-stock.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/more/more.dart';
@@ -84,11 +85,11 @@ class MyMaterialApp extends StatelessWidget {
           initialRoute: MainScreen.id,
           routes: {
             MainScreen.id: (context) => MainScreen(),
-            AdDetailsScreen.id: (context) => AdDetailsScreen(),
+            CreateAdScreen.id: (context) => CreateAdScreen(),
             AnnouncementScreen.id: (context) => AnnouncementScreen(),
             EditItemScreen.id: (context) => EditItemScreen(),
             CategoriesScreen.id: (context) => CategoriesScreen(),
-            PersonalCareScreen.id: (context) => PersonalCareScreen(),
+            CategoryProductsScreen.id: (context) => CategoryProductsScreen(),
             ProfileScreen.id: (context) => ProfileScreen(),
             AddonsScreen.id: (context) => AddonsScreen(),
             LowStockScreen.id: (context) => LowStockScreen(),
@@ -96,11 +97,12 @@ class MyMaterialApp extends StatelessWidget {
             ReviewsScreen.id: (context) => ReviewsScreen(),
             BannersScreen.id: (context) => BannersScreen(),
             LiveChatScreen.id: (context) => LiveChatScreen(),
-            AdDetailsMoreScreen.id: (context) => AdDetailsMoreScreen(),
+            AdDetailsScreen.id: (context) => AdDetailsScreen(),
             AdvertisementScreen.id: (context) => AdvertisementScreen(),
-            AdDetailsMore2Screen.id: (context) => AdDetailsMore2Screen(),
+            EditAdScreen.id: (context) => EditAdScreen(),
             CouponMoreScreen.id: (context) => CouponMoreScreen(),
             CouponMore2Screen.id: (context) => CouponMore2Screen(),
+            EditCouponScreen.id: (context) => EditCouponScreen(),
             SplashScreen.id: (context) => SplashScreen(),
             ForgotPassScreen.id: (context) => ForgotPassScreen(),
             SignInScreen.id: (context) => SignInScreen(),
@@ -120,7 +122,7 @@ class MyMaterialApp extends StatelessWidget {
                 (context) => DeliveredOrderDetailsScreen(),
             MyBusinessPlanScreen.id: (context) => MyBusinessPlanScreen(),
             ChangePlanScreen.id: (context) => ChangePlanScreen(),
-            ShiftInThisPlan.id: (context) => ShiftInThisPlan(),
+            ShiftInThisPlanScreen.id: (context) => ShiftInThisPlanScreen(),
             ExpenseReportScreen.id: (context) => ExpenseReportScreen(),
             ChangePassScreen.id: (context) => ChangePassScreen(),
             HelpAndSupportScreen.id: (context) => HelpAndSupportScreen(),

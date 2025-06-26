@@ -54,7 +54,7 @@ Future<void> showDeleteAlert(
                           children: [
                             CustomAlertButton(
                               text: 'No, Cancel',
-                              onPressed: () {},
+                              onPressed: () => Navigator.pop(context),
                               fillColor: Colors.white,
                               isOutlined: true,
                               textColor: blackColor,

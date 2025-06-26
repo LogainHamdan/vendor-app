@@ -25,7 +25,7 @@ class CustomDropdownFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<AddItemProvider>(context);
+    final provider = Provider.of<EditItemProvider>(context);
     final selectedValue = provider.getValue(providerKey);
 
     return GestureDetector(

@@ -4,6 +4,8 @@ import 'package:burger_home/screens/edit-item/widgets/custom-parent-container.da
 import 'package:burger_home/screens/edit-item/widgets/draggable-button.dart';
 import 'package:burger_home/screens/home%20&%20wallet/confirmed-order-details/widgets/alerts/alerts.dart';
 import 'package:burger_home/screens/home%20&%20wallet/confirmed-order-details/widgets/cook-button.dart';
+import 'package:burger_home/screens/more%20&%20store%20management/conversations/conversations.dart';
+import 'package:burger_home/screens/more%20&%20store%20management/live-chat/live-chat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -40,7 +42,8 @@ class HandoverOrderDetailsScreen extends StatelessWidget {
                 name: 'Mohamed AbuTair',
                 address: 'Alquds Street, Lorem Ipsum',
                 imageUrl: person,
-                onChatPressed: () {},
+                onChatPressed:
+                    () => Navigator.pushNamed(context, LiveChatScreen.id),
               ),
 
               SizedBox(height: 16.h),

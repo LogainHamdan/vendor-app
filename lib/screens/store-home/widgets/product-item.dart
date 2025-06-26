@@ -1,3 +1,4 @@
+import 'package:burger_home/screens/edit-item/edit-item.dart';
 import 'package:burger_home/screens/store-home/alerts/alerts.dart';
 import 'package:burger_home/screens/store-home/widgets/custom-popup.dart';
 import 'package:flutter/material.dart';
@@ -70,10 +71,15 @@ class ProductGridItem extends StatelessWidget {
                           productCenter,
                           actions: [
                             PopupActionItem(
-                              iconPath: editIcon,
+                              iconPath: editGreen,
                               label: 'Edit',
                               textColor: greenColor,
-                              onTap: () {},
+
+                              onTap:
+                                  () => Navigator.pushNamed(
+                                    context,
+                                    EditItemScreen.id,
+                                  ),
                             ),
                             PopupActionItem(
                               iconPath: deleteIcon,

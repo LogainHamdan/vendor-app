@@ -1,3 +1,4 @@
+import 'package:burger_home/screens/more%20&%20store%20management/ad-details-more-2/provider.dart';
 import 'package:burger_home/screens/store-home/alerts/alerts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../constants/constants.dart';
 import '../../../store-home/widgets/custom-popup.dart';
+import '../../add-item/add-item.dart';
 
 class AdCard extends StatelessWidget {
   final String adId;
@@ -104,13 +106,13 @@ class AdCard extends StatelessWidget {
                     iconPath: greyEyeIcon,
                     label: 'View Ad',
                     textColor: blackColor,
-                    onTap: () {},
+                    onTap: () => Navigator.pushNamed(context, AdDetailsScreen.id),
                   ),
                   PopupActionItem(
                     iconPath: greyDeleteIcon,
                     label: 'Edit',
                     textColor: blackColor,
-                    onTap: () {},
+                    onTap: () => Navigator.pushNamed(context, AdDetailsScreen.id),
                   ),
                   PopupActionItem(
                     iconPath: pauseIcon,

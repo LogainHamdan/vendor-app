@@ -14,13 +14,13 @@ import 'package:provider/provider.dart';
 
 import 'alerts/alerts.dart';
 
-class AdDetailsScreen extends StatelessWidget {
-  static const id = '/details';
+class CreateAdScreen extends StatelessWidget {
+  static const id = '/ad-details';
 
-  const AdDetailsScreen({super.key});
+  const CreateAdScreen({super.key});
 
   Future<void> _selectTime(BuildContext context, bool isStart) async {
-    final provider = Provider.of<AdDetailsProvider>(context, listen: false);
+    final provider = Provider.of<CreateAdProvider>(context, listen: false);
     final TimeOfDay initialTime = isStart ? provider.start : provider.end;
     final TimeOfDay? picked = await showTimePicker(
       context: context,
@@ -37,7 +37,7 @@ class AdDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<AdDetailsProvider>(
+    return Consumer<CreateAdProvider>(
       builder:
           (context, provider, child) => Scaffold(
             appBar: CustomAppBar(title: 'Burger Home'),
@@ -45,7 +45,7 @@ class AdDetailsScreen extends StatelessWidget {
               padding: EdgeInsets.only(top: 16.0),
               child: Container(
                 color: Colors.white,
-                child: Consumer<AdDetailsProvider>(
+                child: Consumer<CreateAdProvider>(
                   builder:
                       (context, provider, _) => SingleChildScrollView(
                         padding: const EdgeInsets.all(16),
@@ -57,16 +57,111 @@ class AdDetailsScreen extends StatelessWidget {
                                 UploadContainer(
                                   title: "Logo",
                                   ratio: '1:1',
-                                  image: SvgPicture.asset(uploadContainer),
+                                  image: GestureDetector(
+                                    onTap: provider.pickLogoImage,
+                                    child:
+                                        provider.logoImage != null
+                                            ? Stack(
+                                              children: [
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(20),
+                                                  child: Image.file(
+                                                    provider.logoImage!,
+                                                    height: 90, // نفس أبعاد svg
+                                                    width: 90,
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                                Positioned(
+                                                  top: 4,
+                                                  right: 4,
+                                                  child: GestureDetector(
+                                                    onTap:
+                                                        provider
+                                                            .removeLogoImage,
+                                                    child: Container(
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.black
+                                                            .withOpacity(0.6),
+                                                        shape: BoxShape.circle,
+                                                      ),
+                                                      padding: EdgeInsets.all(
+                                                        4,
+                                                      ),
+                                                      child: Icon(
+                                                        Icons.close,
+                                                        color: Colors.white,
+                                                        size: 16,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            )
+                                            : SvgPicture.asset(
+                                              uploadContainer,
+                                              height: 90,
+                                              width: 90,
+                                            ),
+                                  ),
                                 ),
                                 SizedBox(width: 16),
                                 UploadContainer(
                                   title: "Cover",
                                   ratio: '1:3',
-                                  image: SvgPicture.asset(uploadContainer),
+                                  image: GestureDetector(
+                                    onTap: provider.pickCoverImage,
+                                    child:
+                                        provider.coverImage != null
+                                            ? Stack(
+                                              children: [
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(20),
+                                                  child: Image.file(
+                                                    provider.coverImage!,
+                                                    height: 90,
+                                                    width: 270,
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                                Positioned(
+                                                  top: 4,
+                                                  right: 4,
+                                                  child: GestureDetector(
+                                                    onTap:
+                                                        provider
+                                                            .removeCoverImage,
+                                                    child: Container(
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.black
+                                                            .withOpacity(0.6),
+                                                        shape: BoxShape.circle,
+                                                      ),
+                                                      padding: EdgeInsets.all(
+                                                        4,
+                                                      ),
+                                                      child: Icon(
+                                                        Icons.close,
+                                                        color: Colors.white,
+                                                        size: 16,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            )
+                                            : SvgPicture.asset(
+                                              uploadContainer,
+                                              height: 90,
+                                              width: 270,
+                                            ),
+                                  ),
                                 ),
                               ],
                             ),
+
                             SizedBox(height: 16.h),
 
                             CustomTitle(title: "Main Info"),
@@ -163,6 +258,7 @@ class AdDetailsScreen extends StatelessWidget {
                                 height: 24,
                                 width: 24,
                               ),
+                              suffixMethod: () => showScheduleAlert(context),
                             ),
 
                             SizedBox(height: 16.h),

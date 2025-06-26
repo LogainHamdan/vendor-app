@@ -41,6 +41,24 @@ class OptionsContainer extends StatelessWidget {
                     trailing:
                         noArrow!
                             ? SizedBox()
+                            : item['isLanguageTile']
+                            ? Row(
+                              mainAxisSize: MainAxisSize.min,
+
+                              children: [
+                                SvgPicture.asset(
+                                  ukFlag,
+                                  height: 16.h,
+                                  width: 16.w,
+                                ),
+                                SizedBox(width: 4.w),
+                                SvgPicture.asset(
+                                  arrowRight,
+                                  height: 20.h,
+                                  width: 20,
+                                ),
+                              ],
+                            )
                             : SvgPicture.asset(
                               arrowRight,
                               height: 20.h,

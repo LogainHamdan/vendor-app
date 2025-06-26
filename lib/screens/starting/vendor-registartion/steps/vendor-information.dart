@@ -120,15 +120,15 @@ class VendorInformation extends StatelessWidget {
               hint: '50',
               label: 'VAT (Value Added Tax)',
               suffixIcon: SvgPicture.asset(orangeInfoCircle),
+              suffixMethod: () => showScheduleAlert(context),
             ),
             SizedBox(height: 24.h),
             CustomTextField(
               hint: '7-10 minutes',
               label: 'Estimated Delivery Time',
-              suffixIcon: GestureDetector(
-                child: SvgPicture.asset(clockGreen),
-                onTap: () => showTimeStartAlert(context),
-              ),
+              suffixMethod: () => showScheduleAlert(context),
+
+              suffixIcon: SvgPicture.asset(clockGreen),
             ),
             SizedBox(height: 24.h),
           ],

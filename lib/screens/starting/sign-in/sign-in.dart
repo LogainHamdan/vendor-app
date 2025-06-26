@@ -2,12 +2,16 @@ import 'package:burger_home/constants/constants.dart';
 import 'package:burger_home/screens/ad-details/widgets/custom-text-field.dart';
 import 'package:burger_home/screens/announcement/widgets/custom-elevated-button.dart';
 import 'package:burger_home/screens/edit-item/widgets/custom-checkbox.dart';
+import 'package:burger_home/screens/starting/forgot-pass/forgot-pass.dart';
 import 'package:burger_home/screens/starting/sign-in/provider.dart';
+import 'package:burger_home/screens/starting/vendor-registartion/registration.dart';
+import 'package:burger_home/screens/starting/vendor-registartion/steps/vendor-information.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
+import '../../main/ui/screens/main_screen.dart';
 import '../../store-home/widgets/tab-button.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -95,18 +99,38 @@ class SignInScreen extends StatelessWidget {
                     password: true,
                   ),
                   SizedBox(height: 16.h),
-                  CustomCheckbox(
-                    title: 'Remember Me',
-                    providerKey: 'remember-me',
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CustomCheckbox(
+                        title: 'Remember Me',
+                        providerKey: 'remember-me',
+                      ),
+                      GestureDetector(
+                        onTap: () => ForgotPassScreen.id,
+                        child: Text(
+                          'Forgot Password ?',
+                          style: TextStyle(
+                            color: burgundyColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14.sp,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   SizedBox(height: 32.h),
                   CustomElevatedButton(
                     text: 'Sign In',
-                    onPressed: () {},
+                    onPressed:
+                        () => Navigator.pushNamed(context, MainScreen.id),
                     color: burgundyColor,
                   ),
                   SizedBox(height: 24.h),
                   GestureDetector(
+                    onTap:
+                        () =>
+                            Navigator.pushNamed(context, RegistrationScreen.id),
                     child: Text(
                       'Join As Vendor',
                       style: TextStyle(

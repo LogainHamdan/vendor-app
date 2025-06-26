@@ -44,8 +44,7 @@ class CustomOption extends StatelessWidget {
             ),
             SizedBox(width: 16.w),
             if (icon != null) ...[icon!, SizedBox(width: 8.w)],
-            SizedBox(
-              width: 120.w,
+            Expanded(
               child: Text(
                 title,
                 style: TextStyle(

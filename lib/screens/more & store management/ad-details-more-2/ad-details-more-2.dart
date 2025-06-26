@@ -16,10 +16,10 @@ import 'package:provider/provider.dart';
 import '../../../constants/constants.dart';
 import '../../store-home/widgets/tab-button.dart';
 
-class AdDetailsMore2Screen extends StatelessWidget {
+class EditAdScreen extends StatelessWidget {
   static const id = '/ad-details-more-2';
 
-  const AdDetailsMore2Screen({super.key});
+  const EditAdScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -110,9 +110,15 @@ class AdDetailsMore2Screen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: DraggableColumn(
-        onPressed1: () {},
+        onPressed1: () {
+          Navigator.pop(context);
+          Navigator.pop(context);
+        },
         title1: 'Confirm',
-        onPressed2: () {},
+        onPressed2: () {
+          Navigator.pop(context);
+          Navigator.pop(context);
+        },
         title2: 'Reset',
       ),
     );

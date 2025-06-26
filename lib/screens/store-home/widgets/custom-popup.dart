@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../constants/constants.dart';
@@ -71,7 +72,11 @@ class CustomPopup {
                   value: action,
                   child: Row(
                     children: [
-                      SvgPicture.asset(action.iconPath, height: 20, width: 20),
+                      SvgPicture.asset(
+                        action.iconPath,
+                        height: 16.w,
+                        width: 16.w,
+                      ),
                       const SizedBox(width: 8),
                       Text(
                         action.label,

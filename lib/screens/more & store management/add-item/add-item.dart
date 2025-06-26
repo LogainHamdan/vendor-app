@@ -1,18 +1,20 @@
 import 'package:burger_home/screens/ad-details/widgets/custom-app-bar.dart';
+import 'package:burger_home/screens/edit-item/edit-item.dart';
 import 'package:burger_home/screens/edit-item/widgets/custom-parent-container.dart';
 import 'package:burger_home/screens/edit-item/widgets/draggable-button.dart';
-import 'package:burger_home/screens/more%20&%20store%20management/ad-details/widgets/AdDetailsCard.dart';
-import 'package:burger_home/screens/more%20&%20store%20management/ad-details/widgets/ad-details-card-2.dart';
+import 'package:burger_home/screens/more%20&%20store%20management/ad-details-more-2/ad-details-more-2.dart';
+import 'package:burger_home/screens/more%20&%20store%20management/add-item/widgets/AdDetailsCard.dart';
+import 'package:burger_home/screens/more%20&%20store%20management/add-item/widgets/ad-details-card-2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../constants/constants.dart';
 
-class AdDetailsMoreScreen extends StatelessWidget {
+class AdDetailsScreen extends StatelessWidget {
   static const id = '/ad-details-more';
 
-  const AdDetailsMoreScreen({super.key});
+  const AdDetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +82,7 @@ class AdDetailsMoreScreen extends StatelessWidget {
       ),
       bottomNavigationBar: DraggableButton(
         title: 'Edit Ad',
-        onPressed: () {},
+        onPressed: () => Navigator.pushNamed(context, EditAdScreen.id),
         outlined: true,
       ),
     );
