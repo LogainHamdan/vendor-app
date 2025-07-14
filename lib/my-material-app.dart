@@ -21,7 +21,7 @@ import 'package:burger_home/screens/home%20&%20wallet/orders/orders.dart';
 import 'package:burger_home/screens/home%20&%20wallet/pending-order-details/pending-order-details.dart';
 import 'package:burger_home/screens/main/ui/screens/main_screen.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/ad-details-more-2/ad-details-more-2.dart';
-import 'package:burger_home/screens/more%20&%20store%20management/add-item/add-item.dart';
+import 'package:burger_home/screens/more%20&%20store%20management/ad-details/ad-details.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/addons/addons.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/advertisement/advertisement.dart';
 import 'package:burger_home/screens/more%20&%20store%20management/banners/banners.dart';

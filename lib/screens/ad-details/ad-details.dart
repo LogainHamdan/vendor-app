@@ -15,25 +15,9 @@ import 'package:provider/provider.dart';
 import 'alerts/alerts.dart';
 
 class CreateAdScreen extends StatelessWidget {
-  static const id = '/ad-details';
+  static const id = '/create-new-ad';
 
   const CreateAdScreen({super.key});
-
-  Future<void> _selectTime(BuildContext context, bool isStart) async {
-    final provider = Provider.of<CreateAdProvider>(context, listen: false);
-    final TimeOfDay initialTime = isStart ? provider.start : provider.end;
-    final TimeOfDay? picked = await showTimePicker(
-      context: context,
-      initialTime: initialTime,
-    );
-    if (picked != null) {
-      if (isStart) {
-        provider.updateStartTime(picked);
-      } else {
-        provider.updateEndTime(picked);
-      }
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,13 +26,13 @@ class CreateAdScreen extends StatelessWidget {
           (context, provider, child) => Scaffold(
             appBar: CustomAppBar(title: 'Burger Home'),
             body: Padding(
-              padding: EdgeInsets.only(top: 16.0),
+              padding: EdgeInsets.only(top: 16.0.h),
               child: Container(
                 color: Colors.white,
                 child: Consumer<CreateAdProvider>(
                   builder:
                       (context, provider, _) => SingleChildScrollView(
-                        padding: const EdgeInsets.all(16),
+                        padding: EdgeInsets.all(16.w),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -65,17 +49,19 @@ class CreateAdScreen extends StatelessWidget {
                                               children: [
                                                 ClipRRect(
                                                   borderRadius:
-                                                      BorderRadius.circular(20),
+                                                      BorderRadius.circular(
+                                                        20.r,
+                                                      ),
                                                   child: Image.file(
                                                     provider.logoImage!,
-                                                    height: 90, // نفس أبعاد svg
-                                                    width: 90,
+                                                    height: 90.h,
+                                                    width: 90.w,
                                                     fit: BoxFit.cover,
                                                   ),
                                                 ),
                                                 Positioned(
-                                                  top: 4,
-                                                  right: 4,
+                                                  top: 4.h,
+                                                  right: 4.w,
                                                   child: GestureDetector(
                                                     onTap:
                                                         provider
@@ -250,17 +236,17 @@ class CreateAdScreen extends StatelessWidget {
                             SizedBox(height: 16.h),
                             CustomTextField(
                               label: 'Estimated Delivery Time',
-                              hint: '7-10 minutes',
-                              keyboardType: TextInputType.number,
-                              onChanged: provider.updateMinOrder,
+                              hint: provider.minOrder,
+                              //     keyboardType: TextInputType.number,
+                              //   onChanged: provider.updateMinOrder,
                               suffixIcon: SvgPicture.asset(
                                 clockGreen,
-                                height: 24,
-                                width: 24,
+                                height: 24.h,
+                                width: 24.w,
                               ),
-                              suffixMethod: () => showScheduleAlert(context),
+                              suffixMethod:
+                                  () => showDeliveryScheduleAlert(context),
                             ),
-
                             SizedBox(height: 16.h),
                             CustomTitle(title: 'Daily Schedule Time'),
                             ...[
@@ -276,7 +262,11 @@ class CreateAdScreen extends StatelessWidget {
                                   (day) => ScheduleRowWidget(
                                     day: day,
                                     timeRange: "11:00 AM - 8:00 PM",
-                                    onAdd: () => showScheduleAlert(context),
+                                    onAdd:
+                                        () => showDailyScheduleAlert(
+                                          context,
+                                          provider.day,
+                                        ),
                                   ),
                                 )
                                 .toList(),

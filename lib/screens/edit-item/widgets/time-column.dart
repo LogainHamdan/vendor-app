@@ -7,12 +7,14 @@ class TimeColumn extends StatelessWidget {
   final String title;
   final List<String> options;
   final int selectedIndex;
+  final Function(int) onSelect; // ✅ إضافة callback
 
   const TimeColumn({
     Key? key,
     required this.title,
     required this.options,
     required this.selectedIndex,
+    required this.onSelect, // ✅
   }) : super(key: key);
 
   @override
@@ -43,21 +45,28 @@ class TimeColumn extends StatelessWidget {
                     int index = entry.key;
                     String value = entry.value;
                     bool isSelected = index == selectedIndex;
-                    return Container(
-                      width: 80.w,
-                      height: 30.h,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color:
-                            isSelected ? const Color(0xFFF9E5E5) : Colors.white,
-                      ),
-                      child: Text(
-                        value,
-                        style: TextStyle(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.bold,
+                    return GestureDetector(
+                      onTap: () => onSelect(index), // ✅ تحديث الاختيار
+                      child: Container(
+                        width: 80.w,
+                        height: 30.h,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
                           color:
-                              isSelected ? const Color(0xFF7F001D) : blackColor,
+                              isSelected
+                                  ? const Color(0xFFF9E5E5)
+                                  : Colors.white,
+                        ),
+                        child: Text(
+                          value,
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.bold,
+                            color:
+                                isSelected
+                                    ? const Color(0xFF7F001D)
+                                    : blackColor,
+                          ),
                         ),
                       ),
                     );

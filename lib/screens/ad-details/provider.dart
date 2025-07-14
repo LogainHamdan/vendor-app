@@ -16,8 +16,11 @@ class CreateAdProvider with ChangeNotifier {
   bool delivery = true;
   bool cutlery = true;
   bool takeAway = true;
-
-  String minOrder = '';
+  String estimatedHours = '0';
+  String estimatedMinutes = '0';
+  String day = 'Saturday';
+  String minOrder = '7-10 minutes';
+  bool isAm = true;
 
   TimeOfDay start = TimeOfDay(hour: 11, minute: 0);
   TimeOfDay end = TimeOfDay(hour: 20, minute: 0);
@@ -26,7 +29,44 @@ class CreateAdProvider with ChangeNotifier {
   File? _coverImage;
 
   File? get logoImage => _logoImage;
+
   File? get coverImage => _coverImage;
+  void setAm(bool value) {
+    isAm = value;
+    notifyListeners();
+  }
+
+  void updateEstimatedTime({
+    required String hours,
+    required String minutes,
+    required bool amPmFormat,
+  }) {
+    estimatedHours = hours;
+    estimatedMinutes = minutes;
+
+    if (!amPmFormat) {
+      minOrder =
+          "${hours.padLeft(2, '0')} hours ${minutes.padLeft(2, '0')} minutes";
+    } else {
+      int hourInt = int.tryParse(hours) ?? 1;
+      int minuteInt = int.tryParse(minutes) ?? 0;
+
+      hourInt = hourInt.clamp(1, 12);
+
+      String period = isAm ? "AM" : "PM";
+      int nextHour = hourInt == 12 ? 1 : hourInt + 1;
+
+      String nextPeriod =
+          (hourInt == 11 && isAm) || (hourInt == 12 && !isAm)
+              ? (isAm ? "PM" : "AM")
+              : period;
+
+      minOrder =
+          "$hourInt:${minutes.padLeft(2, '0')} $period - $nextHour:${minutes.padLeft(2, '0')} $nextPeriod";
+    }
+
+    notifyListeners();
+  }
 
   Future<void> pickLogoImage() async {
     final picker = ImagePicker();

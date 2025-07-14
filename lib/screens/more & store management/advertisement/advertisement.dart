@@ -11,7 +11,7 @@ import 'package:provider/provider.dart';
 
 import '../../../constants/constants.dart';
 import '../../store-home/widgets/tab-button.dart';
-import '../add-item/add-item.dart';
+import '../ad-details/ad-details.dart';
 
 class AdvertisementScreen extends StatelessWidget {
   static const id = '/ads';

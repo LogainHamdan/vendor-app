@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../constants/constants.dart';
 import '../../../ad-details/widgets/custom-title.dart';
-import '../../add-item/widgets/ad-details-row.dart';
+import '../../ad-details/widgets/ad-details-row.dart';
 import '../../edit-coupon/edit-coupon.dart';
 
 class CustomCouponCard extends StatelessWidget {

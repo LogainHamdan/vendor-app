@@ -6,7 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../constants/constants.dart';
 import '../../../store-home/widgets/custom-popup.dart';
-import '../../add-item/add-item.dart';
+import '../../ad-details/ad-details.dart';
 
 class AdCard extends StatelessWidget {
   final String adId;
@@ -106,13 +106,15 @@ class AdCard extends StatelessWidget {
                     iconPath: greyEyeIcon,
                     label: 'View Ad',
                     textColor: blackColor,
-                    onTap: () => Navigator.pushNamed(context, AdDetailsScreen.id),
+                    onTap:
+                        () => Navigator.pushNamed(context, AdDetailsScreen.id),
                   ),
                   PopupActionItem(
                     iconPath: greyDeleteIcon,
                     label: 'Edit',
                     textColor: blackColor,
-                    onTap: () => Navigator.pushNamed(context, AdDetailsScreen.id),
+                    onTap:
+                        () => Navigator.pushNamed(context, AdDetailsScreen.id),
                   ),
                   PopupActionItem(
                     iconPath: pauseIcon,

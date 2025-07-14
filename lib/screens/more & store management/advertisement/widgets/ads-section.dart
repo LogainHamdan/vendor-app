@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 
 import '../../../../constants/constants.dart';
 import '../../../store-home/widgets/tab-button.dart';
-import '../../add-item/add-item.dart';
+import '../../ad-details/ad-details.dart';
 import '../../categories/widgets/header-title.dart';
 import '../provider.dart';
 import 'ad-card.dart';
@@ -67,7 +67,8 @@ class AdsSection extends StatelessWidget {
                     type: ad["type"]!,
                     placedDate: ad["placedDate"]!,
                     duration: ad["duration"]!,
-                    onTap: () => Navigator.pushNamed(context, AdDetailsScreen.id),
+                    onTap:
+                        () => Navigator.pushNamed(context, AdDetailsScreen.id),
                   );
                 },
               ),
