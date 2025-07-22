@@ -1,16 +1,44 @@
-# burger_home
+# Smart Dining App – Restaurant Management System
 
-A new Flutter project.
+A fully-featured Flutter application built to elevate dining experiences and streamline restaurant operations. This robust solution provides a seamless interface for customers, vendors, and delivery personnel, distributed across **5 major modules** and **3 standalone apps**: **User**, **Vendor**, and **Delivery**.
 
-## Getting Started
+## Core Features
 
-This project is a starting point for a Flutter application.
+### For Customers (User App)
+- Browse digital menus with rich images and detailed descriptions
+- Table reservations with real-time availability
+- Online food ordering
+- Secure in-app payments
+- Real-time order tracking
 
-A few resources to get you started if this is your first Flutter project:
+### For Restaurants (Vendor App) – *Led by me*
+- Menu management and instant updates
+- Order processing and live status updates
+- Feedback analytics to track performance and improve services
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### For Delivery Personnel (Delivery App)
+- Access assigned orders with route details
+- Real-time notifications and updates
+- Order pickup and delivery confirmations
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🧩 Project Structure
+
+- **5 interconnected modules**
+- **3 complete apps (User, Vendor, Delivery)**
+- Distributed team collaboration
+- Full integration between UI and API
+- **Vendor module developed and maintained by me and participated closely in the other related apps**
+
+## Tech Stack
+
+- **Flutter** for scalable UI across all apps
+- **Dio** for API communication
+- **Provider / Riverpod** for state management
+- **Secure Payment Gateway** integration
+- **Modular and reusable architecture**
+
+---
+
+This project showcases a multi-role restaurant system designed to bring efficiency, scalability, and delightful user experiences to the food and hospitality industry.
+## APK Release and more UI Screens: https://drive.google.com/drive/folders/1FbmL9F99lvpLrFGIKmWlo276GV6ZjCBe
+![Alt](https://github.com/LogainHamdan/vendor-app/blob/d3e0bb7015e5bed3e89872492bb38f558f859701/vendor.png)
