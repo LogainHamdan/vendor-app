@@ -1,4 +1,4 @@
-# Smart Dining App – Restaurant Management System
+# Sale and Restaurant Management Application
 
 A fully-featured Flutter application built to elevate dining experiences and streamline restaurant operations. This robust solution provides a seamless interface for customers, vendors, and delivery personnel, distributed across **5 major modules** and **3 standalone apps**: **User**, **Vendor**, and **Delivery**.
 
@@ -41,4 +41,4 @@ A fully-featured Flutter application built to elevate dining experiences and str
 
 This project showcases a multi-role restaurant system designed to bring efficiency, scalability, and delightful user experiences to the food and hospitality industry.
 ## APK Release and more UI Screens: https://drive.google.com/drive/folders/1FbmL9F99lvpLrFGIKmWlo276GV6ZjCBe
-![Alt](https://github.com/LogainHamdan/vendor-app/blob/d3e0bb7015e5bed3e89872492bb38f558f859701/vendor.png)
+![Alt](https://github.com/LogainHamdan/vendor-app/blob/78a6be0250bd6d2bc573dbf8e5c7448c92fe6f55/Purple%20Pink%20Gradient%20Mobile%20Application%20Presentation%20(2).png)
